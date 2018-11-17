@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="LoanInfo" table="loan_info">
+	    <id name="loanId" column="LOAN_ID">
+	    	<generator class="native"></generator>
+	    </id>
+		<property name="loanType" column="LOAN_TYPE"></property>
+		<property name="loanClass" column="LOAN_CLASS"></property>
+		<property name="loanUse" column="LOAN_USE"></property>
+		<property name="appliAmount" column="APPLI_AMOUNT"></property>
+		<property name="loanTerm" column="LOAN_TERM"></property>
+		<property name="maxInstallment" column="MAX_INSTALLMENT"></property>
+		<property name="guranteeMethod" column="GURANTEE_METHOD"></property>
+		<property name="appliTime" column="APPLI_TIME"></property>
+		<property name="loanCreditDate" column="LOAN_CREDIT_DATE"></property>
+		<property name="loanRefuseType" column="LOAN_REFUSE_TYPE"></property>
+		<property name="loanRefuseReason" column="LOAN_REFUSE_REASON"></property>
+		<property name="loanRefuseRemark" column="LOAN_REFUSE_REMARK"></property>
+		<property name="loanRefuseDate" column="LOAN_REFUSE_DATE"></property>
+		<property name="loanRefuseUser" column="LOAN_REFUSE_USER"></property>
+		<property name="loanCollectState" column="LOAN_COLLECT_STATE"></property>
+		<property name="loanCollectDate" column="LOAN_COLLECT_DATE"></property>
+		<property name="loanRepayAmount" column="LOAN_REPAY_AMOUNT"></property>
+		<property name="loanRepayDate" column="LOAN_REPAY_DATE"></property>
+		<property name="loanBelongId" column="LOAN_BELONG_ID"></property>
+		<property name="repaymentMode" column="REPAYMENT_MODE"></property>
+		<property name="isDel" column="IS_DEL"></property>
+		<property name="loanAccountNo" column="LOAN_ACCOUNT_NO"></property>
+		<property name="loanAccountAmount" column="LOAN_ACCOUNT_AMOUNT"></property>
+		<property name="loanBalanceAmount" column="LOAN_BALANCE_AMOUNT"></property>
+		<property name="loanProposeAmount" column="LOAN_PROPOSE_AMOUNT"></property>
+		<property name="loanCreditAmount" column="LOAN_CREDIT_AMOUNT"></property>	
+		<property name="loanCreditNumber" column="LOAN_CONTRACT_NUMBER"></property>	
+		<property name="updateDate" column="UPDATE_DATE"></property>	
+		<property name="creditUser" column="CREDIT_USER"></property>	
+		<property name="clientName" column="CLIENT_NAME"></property>	
+		<property name="clientAge" column="CLIENT_AGE"></property>	
+		<property name="phoneNumber" column="PHONE_NUMBER"></property>	
+		<property name="identifyType" column="IDENTIFY_TYPE"></property>	
+		<property name="identifyNum" column="IDENTIFY_NUM"></property>	
+		<property name="loanAuditDate" column="LOAN_AUDIT_DATE"></property>	
+		<property name="appliReason" column="APPLI_REASON"></property>	
+		<many-to-one name="clientInfoID" column="CLIENT_INFO_ID" class="ClientInfo" lazy="false"></many-to-one>
+	</class>
+
+</hibernate-mapping>
