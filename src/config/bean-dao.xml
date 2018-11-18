@@ -15,11 +15,11 @@
      	 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Dao注入SessionFactory -->
-	<bean id="clientInfoDao" class="njupt.microcredit.dao">
+	<bean id="clientInfoDao" class="njupt.microcredit.dao.impl.ClientInfoDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean> 
 	
-	<bean id="loanInfoDao" class="njupt.microcredit.dao">
+	<bean id="loanInfoDao" class="njupt.microcredit.dao.impl.LoanInfoDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>  
 	

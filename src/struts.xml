@@ -16,12 +16,16 @@
 		</global-results> -->
 		
 		<!-- 全局异常 -->
-		
-	    <global-exception-mappings>
-			<!-- result 会去找全局视图名称 -->
+	    <!-- <global-exception-mappings>
+			result 会去找全局视图名称
 			<exception-mapping result="null" exception="java.lang.NullPointException"></exception-mapping>
 			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
-		</global-exception-mappings>
+		</global-exception-mappings> -->
+		
+		<action name="loan_*" class="loanInfoAction" method="{1}">
+			<!-- 列表展示 -->
+			<result name="list">/microcredit/displayInfo.jsp</result>
+		</action>
 		
 		
 		

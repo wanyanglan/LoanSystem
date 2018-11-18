@@ -21,8 +21,8 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
 		<property name="user" value="microcredit"></property>
 		<property name="password" value="123456"></property>
-		<property name="initialPoolSize" value="20"></property>
-		<property name="maxPoolSize" value="30"></property>
+		<property name="initialPoolSize" value="3"></property>
+		<property name="maxPoolSize" value="6"></property>
 	</bean>
 	
 	<!-- 2.Spring管理SessionFactory【全部配置都写到spring中】 -->
@@ -33,7 +33,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 		<property name="mappingLocations">

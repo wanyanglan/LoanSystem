@@ -7,12 +7,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<title>用户中心</title>
-		<link href="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/css/bootstrap.min.css" title="" rel="stylesheet" />
+		<link href="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
 		<link title="" href="${pageContext.request.contextPath}/microcredit/css/style.css" rel="stylesheet" type="text/css" />
 		<link title="blue" href="${pageContext.request.contextPath}/microcredit/css/dermadefault.css" rel="stylesheet" type="text/css" />
 		<link title="green" href="${pageContext.request.contextPath}/microcredit/css/dermagreen.css" rel="stylesheet" type="text/css" disabled="disabled" />
 		<link title="orange" href="${pageContext.request.contextPath}/microcredit/css/dermaorange.css" rel="stylesheet" type="text/css" disabled="disabled" />
 		<link href="${pageContext.request.contextPath}/microcredit/css/templatecss.css" rel="stylesheet" title="" type="text/css" />
+		
 	</head>
 
 	<body>
@@ -95,7 +96,7 @@
 						<ul class="navContent" style="display:block">
 							<li class="active">
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
-								<a href="index.html"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
+								<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
 							</li>							
 						</ul>
 					</div>
@@ -105,11 +106,11 @@
 						<ul class="navContent" style="display:block">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-								<a href="accountInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
+								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-								<a href="blacklist.html"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
+								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
 							</li>
 
 						</ul>
@@ -119,7 +120,7 @@
 						<ul class="navContent" style="display:none">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-								<a href="displayInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
+								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
@@ -198,7 +199,7 @@
 		<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
-		
+
 	</body>
 
 </html>

@@ -94,7 +94,7 @@
 					<ul class="navContent" style="display:block">
 						<li>
 							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
-							<a href="index.html"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
+							<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
 						</li>
 					</ul>
 				</div>
@@ -104,11 +104,11 @@
 					<ul class="navContent" style="display:none">
 						<li>
 							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-							<a href="accountInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
+							<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
 						</li>
 						<li>
 							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-							<a href="blacklist.html"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
+							<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
 						</li>
 
 					</ul>
@@ -118,7 +118,7 @@
 					<ul class="navContent" style="display:block">
 						<li class="active">
 							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-							<a href="displayInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
+							<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
 						</li>
 						<li>
 							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>

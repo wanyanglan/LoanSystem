@@ -13,7 +13,13 @@
          http://www.springframework.org/schema/aop/spring-aop.xsd
          http://www.springframework.org/schema/tx
      	 http://www.springframework.org/schema/tx/spring-tx.xsd">
-	
+     	 
+     <!-- Action中需要注入Service -->
+	<!-- 贷款信息管理模块 -->
+	<bean id="loanInfoAction" class="njupt.microcredit.action.LoanInfoAction" scope="prototype">
+		<property name="loanInfoService" ref="loanInfoService"></property>
+		<property name="clientInfoService" ref="clientInfoService"></property>
+	</bean>
 </beans>     
 
 

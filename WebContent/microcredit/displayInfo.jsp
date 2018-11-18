@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -94,7 +95,7 @@
 						<ul class="navContent" style="display:block">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
-								<a href="index.html"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
+								<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
 							</li>
 						</ul>
 					</div>
@@ -104,11 +105,11 @@
 						<ul class="navContent" style="display:none">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-								<a href="accountInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
+								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-								<a href="blacklist.html"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
+								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
 							</li>
 
 						</ul>
@@ -118,7 +119,7 @@
 						<ul class="navContent" style="display:block">
 							<li class="active">
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-								<a href="displayInfo.html"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
+								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
@@ -150,7 +151,7 @@
 						</div>
 						<div class="manage-detail">
 							<div class="manage-detail-con clearfix">
-								<a class="custom" href="loanlist.html">新建申请</a>
+								<a class="custom" href="loanlist.jsp">新建申请</a>
 							</div>
 						</div>
 						<div class="manage-record">
@@ -161,8 +162,8 @@
 									<thead>
 										<tr>
 											<td class="w10">客户姓名</td>
-											<td class="w5">性别</td>
-											<td class="w5">年龄</td>
+											<td class="w5">性别</td>	
+											<td class="w5">年龄</td>							
 											<td class="w15">手机号</td>
 											<td class="w23">证件号</td>
 											<td class="w10">贷款类型</td>
@@ -172,28 +173,28 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td><a></a></td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-										</tr>
+								        <s:if test="#request.loanList != null">
+								        	<s:iterator var="loanInfo" value="#request.loanList" status="st">
+												<tr>
+													<td><s:property value="loanInfo.clientName"/></td>
+													<td><s:property value="loanInfo.clientInfoID.clientGender"/></td>
+													<td><s:property value="loanInfo.clientAge"/></td>
+													<td><s:property value="loanInfo.phoneNumber"/></td>
+													<td><s:property value="loanInfo.identifyType"/></td>
+													<td><s:property value="loanInfo.identifyNum"/></td>
+													<td><s:property value="loanInfo.appliAmount"/></td>
+													<td><s:property value="loanInfo.appliAmount"/></td>
+													<td>
+														<s:a href="#">详情</s:a>
+													</td>
+												</tr>
+											</s:iterator>
+										</s:if>
+										<s:else>
+											<tr>
+												<td colspan="9" align="center">对不起，暂时没有贷款信息！请先录入</td>
+											</tr>
+										</s:else>
 									</tbody>
 								</table>
 							</div>
@@ -212,7 +213,7 @@
 		<script src="${pageContext.request.contextPath}/microcredit/script/jquery-1.11.1.min.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="script/function.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
 	</body>
 
 </html>
