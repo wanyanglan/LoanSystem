@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -12,6 +13,10 @@
 	<link title="green" href="${pageContext.request.contextPath}/microcredit/css/dermagreen.css" rel="stylesheet" type="text/css" disabled="disabled" />
 	<link title="orange" href="${pageContext.request.contextPath}/microcredit/css/dermaorange.css" rel="stylesheet" type="text/css" disabled="disabled" />
 	<link href="${pageContext.request.contextPath}/microcredit/css/templatecss.css" rel="stylesheet" title="" type="text/css" />
+	<link href="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+	
+	
 </head>
 
 <body>
@@ -145,11 +150,11 @@
 					<div class="info-center">
 						<div class="page-header">
 							<div class="pull-left">
-								<h4>申请信息</h4>
+								<h4>个人贷款申请信息</h4>
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<form action="#" method="post">
+							<s:form action="/lclient_save" method="post">
 								<!--
 	                                	作者：offline
 	                                	时间：2018-11-13
@@ -163,14 +168,16 @@
                                     	时间：2018-11-13
                                     	描述：第一行
 									-->
+									
 								<div class="row">
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="sex" class="form-control" required>
-												<option value="0">item1</option>
-												<option value="1">item2</option>
-												<option value="2">item3</option>
+											<select id="inputSex" name="loanType" class="form-control" required>
+												<option value="新增贷款" >新增贷款</option>
+												<option value="收回再贷" >收回再贷</option>
+												<option value="借新还旧" >借新还旧</option>
+												<option value="其他" >其他</option>
 											</select>
 										</div>
 									</div>
@@ -178,20 +185,26 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款种类:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="sex" class="form-control" required>
-												<option value="0">item1</option>
-												<option value="1">item2</option>
-												<option value="2">item3</option>
+											<select id="inputSex" name="loanClass" class="form-control" required>
+												<option value="住房贷款">住房贷款</option>
+												<option value="汽车消费贷款">汽车消费贷款</option>
+												<option value="耐用消费品贷款">耐用消费品贷款</option>
+												<option value="经营性贷款">经营性贷款</option>
+												<option value="有价单证质押贷款">有价单证质押贷款</option>
+												<option value="小额信用贷款">小额信用贷款</option>
+												<option value="住宅抵押贷款">住宅抵押贷款</option>
+												<option value="非住宅抵押贷款">非住宅抵押贷款</option>
+												<option value="其他">其他</option>
 											</select>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">担保方式:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="sex" class="form-control" required>
-												<option value="0">item1</option>
-												<option value="1">item2</option>
-												<option value="2">item3</option>
+											<select id="inputSex" name="guranteeMethod" class="form-control" required>
+												<option value="保证">保证</option>
+												<option value="抵押">抵押</option>
+												<option value="质押">质押</option>
 											</select>
 										</div>
 									</div>
@@ -207,26 +220,26 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right; margin-top: 15px;">贷款用途:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="loanUse" class="form-control" placeholder="实际用途" required/>
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">申请金额:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="appliAmount" class="form-control" placeholder="填写整数金额" required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">贷款期限:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="loanTerm" class="form-control" placeholder="期限（月）" required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">最大分期额:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="maxInstallment" class="form-control" placeholder="每月最大还款额" required/>
 										</div>
 									</div>
 								</div>
@@ -240,7 +253,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 10px;">申请理由:</label>
 										<div class="col-md-11 " style="padding-left: 0px;margin-top: 10px;">
-											<textarea name="intro" class="form-control" cols="30" rows="8"></textarea>
+											<textarea name="appliReason" class="form-control" cols="30" rows="8" ></textarea>
 										</div>
 									</div>
 
@@ -254,28 +267,50 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">客户姓名:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="clientName" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">性别:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="gender" class="form-control" required>
-												<option value="0">男</option>
-												<option value="1">女</option>
+											<select id="inputSex" name="clientGender" class="form-control" required>
+												<option value="男">男</option>
+												<option value="女">女</option>
 											</select>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">年龄:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="clientAge" class="form-control" placeholder=" " required/>
+										</div>
+									</div>
+									<div class="form-group ">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">出生日期:</label>
+										<div class="date form_date col-md-2" data-date="" date-date-formate="dd MM yyyy"  data-link-format="yyyy-mm-dd" style="padding-left: 0px;margin-top: 10px;">
+											<input type="text" name="clientBirthday" class="form-control" placeholder=" " style="background-color: white;" readonly />
+											<span class="add-on"><i class="icon-remove"></i></span>
+											<span class="add-on"><i class="icon-th"></i></span>
+										</div>
+									</div>
+								</div>
+								<!--个人信息第3行-->
+								<div class="row">
+									<div class="form-group">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件类型:</label>
+										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
+											<select id="inputSex" name="identifyType" class="form-control" required>
+												<option value="居民身份证">居民身份证</option>
+												<option value="士兵证">士兵证</option>
+												<option value="军官证">军官证</option>
+												<option value="其他">其他</option>
+											</select>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">出生日期:</label>
-										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件号码:</label>
+										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
+											<input type="text" name="identifyNum" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 								</div>
@@ -285,25 +320,33 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">联系电话:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="phoneNumber" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">电子邮箱:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="clientEmail" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">户籍:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="clientCensus" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">学历:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<select id="inputSex" name="clientEducation" class="form-control" required>
+												<option value="小学">小学</option>
+												<option value="初中">初中</option>
+												<option value="中专/高中">中专/高中</option>
+												<option value="大专">大专</option>
+												<option value="本科">本科</option>
+												<option value="硕士研究生">硕士研究生</option>
+												<option value="博士研究生">博士研究生</option>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -311,52 +354,40 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">婚姻状况:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">户籍:</label>
-										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">家庭地址:</label>
-										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
-										</div>
-									</div>
-								</div>
-								<!--个人信息第3行-->
-								<div class="row">
-									<div class="form-group">
-										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件类型:</label>
-										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="gender" class="form-control" required>
-												<option value="0">item1</option>
-												<option value="1">item2</option>
+											<select id="inputSex" name="maritalStatus" class="form-control" required>
+												<option value="未婚">未婚</option>
+												<option value="已婚">已婚</option>
+												<option value="丧偶">丧偶</option>
+												<option value="离婚">离婚</option>
 											</select>
 										</div>
 									</div>
+									
 									<div class="form-group">
-										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件号码:</label>
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">家庭地址:</label>
 										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="use" class="form-control" placeholder="not blank" />
+											<input type="text" name="clentAddress" class="form-control" placeholder=" " />
 										</div>
 									</div>
-								</div>
+									<div class="form-group">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">居住年限:</label>
+										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
+											<input type="text" name="addrYears" class="form-control" placeholder="现址居住时间" />
+										</div>
+									</div>
+								</div>								
 
 
 								<!--最后提交部分-->
 								<div class="row">
 									<div class="form-group">
-										<button class="btn btn-default col-md-4">提交申请</button>
-										<button class="btn btn-default col-md-4">保存信息</button>
-										<button class="btn btn-default col-md-4">撤销</button>
+										<button class="btn btn-default col-md-3" type="submit">提交申请</button>
+										<!-- <button class="btn btn-default col-md-4">保存信息</button> -->
+										<button class="btn btn-default col-md-3" type="reset">撤销</button>
 									</div>
 								</div>
 								
-							</form>
+							</s:form>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -368,6 +399,20 @@
 	<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap-datetimepicker.fr.js"></script>
+	<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript">
+		$('.form_date').datetimepicker({
+	        language:  'fr',
+	        weekStart: 1,
+	        todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+	    });
+	</script> 
 
 </body>
 

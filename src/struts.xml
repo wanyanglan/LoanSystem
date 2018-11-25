@@ -25,8 +25,13 @@
 		<action name="loan_*" class="loanInfoAction" method="{1}">
 			<!-- 列表展示 -->
 			<result name="list">/microcredit/displayInfo.jsp</result>
+			<result name="editClient">/microcredit/persondetail.jsp</result>
 		</action>
 		
+		<action name="lclient_*" class="loanClientfoAction" method="{1}">
+			<result name="add">/microcredit/loanlist.jsp</result>
+			<result name="listAction" type="redirectAction">loan_loanList</result>
+		</action>
 		
 		
 

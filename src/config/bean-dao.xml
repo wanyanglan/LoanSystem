@@ -21,7 +21,7 @@
 	
 	<bean id="loanInfoDao" class="njupt.microcredit.dao.impl.LoanInfoDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>  
+	</bean>   
 	
 </beans>     
 

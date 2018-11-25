@@ -7,9 +7,12 @@ import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.apache.struts2.interceptor.RequestAware;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.util.ValueStack;
 
+import njupt.microcredit.entity.ClientInfo;
 import njupt.microcredit.entity.LoanInfo;
 import njupt.microcredit.service.IClientInfoService;
 import njupt.microcredit.service.ILoanInfoService;
@@ -25,7 +28,7 @@ import njupt.microcredit.service.ILoanInfoService;
  */
 public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInfo>,RequestAware{
 
-	/********************一、封装数据*********************/
+	/********************一、封装贷款数据*********************/
 	private LoanInfo loanInfo = new LoanInfo();      //贷款数据
 	public void setLoanInfo(LoanInfo loanInfo) {
 		this.loanInfo = loanInfo;
@@ -41,6 +44,17 @@ public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInf
 	}
 	public int getClientId() {
 		return clientId;
+	}
+	
+	/**
+	 * 封装客户数据
+	 */
+	private ClientInfo clientInfo = new ClientInfo();
+	public void setClientInfo(ClientInfo clientInfo) {
+		this.clientInfo = clientInfo;
+	}
+	public ClientInfo getClientInfo() {
+		return clientInfo;
 	}
 	
 	
@@ -69,11 +83,53 @@ public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInf
 	 * @return
 	 */
 	public String loanList() {
+		
 		//查询所有的贷款信息
 		List<LoanInfo> loanList = loanInfoService.getAll();
-		//保存到request
+		//保存贷款信息到request
 		request.put("loanList",loanList);
 		return "list";
+	}
+	
+	/**
+	 * 2.1查看客户贷款信息
+	 */
+	public String viewClientLoanInfo(){
+		//获取要查看的贷款记录id
+		int loanId = loanInfo.getLoanId();
+//		System.out.println(loanId);
+		
+		// 根据贷款的主键查询信息
+		LoanInfo loanInfo = loanInfoService.findById(loanId);
+		
+		//根据贷款的信息查询客户的信息
+		ClientInfo clientInfo = loanInfo.getClientInfoID();
+		
+//		//数据回显
+//		ValueStack vStack = ActionContext.getContext().getValueStack();
+//		vStack.pop();    //移除栈顶元素
+//		vStack.push(loanInfo);   //入站
+		
+		//保存贷款数据
+		request.put("loanInfo", loanInfo);
+		
+		return "editClient";
+	}
+	
+	/**
+	 * 2.2修改客户数据
+	 */
+	public String updateClientInfo() {
+		//根据客户id,查询客户对象；设置到员工属性中
+		ClientInfo clientInfo = clientInfoService.findById(clientId);
+		
+		//更新客户信息
+		clientInfoService.update(clientInfo);
+//		loanInfo.setClientInfoID(clientInfo);
+//		
+//		//更新贷款信息
+//		loanInfoService.update(loanInfo);
+		return "listAction";
 	}
 	
 	

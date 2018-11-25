@@ -151,41 +151,43 @@
 						</div>
 						<div class="manage-detail">
 							<div class="manage-detail-con clearfix">
-								<a class="custom" href="loanlist.jsp">新建申请</a>
+								<a class="custom" href="lclient_viewAdd">新建申请</a>
 							</div>
 						</div>
 						<div class="manage-record">
 							<h6 class="margin-big-top"></h6>
 							<div class="clearfix"></div>
 							<div class="table-margin">
-								<table class="table table-bordered table-header">
-									<thead>
+								<table class="table table-bordered table-header" style="text-align: center;font-size: 15px;">
+									<thead >
 										<tr>
-											<td class="w10">客户姓名</td>
+											<td class="w7">客户姓名</td>
 											<td class="w5">性别</td>	
 											<td class="w5">年龄</td>							
-											<td class="w15">手机号</td>
-											<td class="w23">证件号</td>
+											<td class="w10">手机号</td>
+											<td class="w10">证件类型</td>
+											<td class="w20">证件号</td>
 											<td class="w10">贷款类型</td>
-											<td class="w10">申请金额</td>
+											<td class="w10">申请金额(元)</td>
 											<td class="w15">创建时间</td>
-											<td class="w7">操作</td>
+											<td class="w8">操作</td>
 										</tr>
 									</thead>
-									<tbody>
+									<tbody >
 								        <s:if test="#request.loanList != null">
 								        	<s:iterator var="loanInfo" value="#request.loanList" status="st">
 												<tr>
-													<td><s:property value="loanInfo.clientName"/></td>
-													<td><s:property value="loanInfo.clientInfoID.clientGender"/></td>
-													<td><s:property value="loanInfo.clientAge"/></td>
-													<td><s:property value="loanInfo.phoneNumber"/></td>
-													<td><s:property value="loanInfo.identifyType"/></td>
-													<td><s:property value="loanInfo.identifyNum"/></td>
-													<td><s:property value="loanInfo.appliAmount"/></td>
-													<td><s:property value="loanInfo.appliAmount"/></td>
+													<td><s:property value="#loanInfo.clientName" /></td>
+													<td><s:property value="#loanInfo.clientInfoID.clientGender"/></td>
+													<td><s:property value="#loanInfo.clientAge" /></td>
+													<td><s:property value="#loanInfo.phoneNumber" /></td>
+													<td><s:property value="#loanInfo.identifyType" /></td>
+													<td><s:property value="#loanInfo.identifyNum" /></td>
+													<td><s:property value="#loanInfo.loanClass" /></td>
+													<td><s:property value="#loanInfo.appliAmount" /></td>
+													<td><s:date name="#loanInfo.appliTime" format="yyyy-MM-dd HH:mm"/></td>
 													<td>
-														<s:a href="#">详情</s:a>
+														<s:a href="loan_viewClientLoanInfo?loanId=%{#loanInfo.loanId}">详情</s:a>
 													</td>
 												</tr>
 											</s:iterator>

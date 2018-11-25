@@ -1,6 +1,6 @@
 package njupt.microcredit.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * 贷款信息实体
@@ -12,7 +12,7 @@ public class LoanInfo {
 	private String loanType;  	//贷款类型
 	private String loanClass;	//贷款种类
 	private String loanUse;		//贷款用途
-	private double appliAmount;	//申请金额
+	private int appliAmount;	//申请金额
 	private int loanTerm;		//贷款期限（月）
 	private double maxInstallment; 	//最大分期额
 	private String guranteeMethod;	//担保方式
@@ -70,10 +70,12 @@ public class LoanInfo {
 	public void setLoanUse(String loanUse) {
 		this.loanUse = loanUse;
 	}
-	public double getAppliAmount() {
+	
+	
+	public int getAppliAmount() {
 		return appliAmount;
 	}
-	public void setAppliAmount(double appliAmount) {
+	public void setAppliAmount(int appliAmount) {
 		this.appliAmount = appliAmount;
 	}
 	public int getLoanTerm() {

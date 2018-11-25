@@ -1,6 +1,6 @@
 package njupt.microcredit.entity;
 
-import java.sql.Date;
+import java.util.Date;
 /**
  * 客户基本信息实体
  * @author wyl
