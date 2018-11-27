@@ -4,8 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
+	<constant name="struts.ui.theme" value="simple"/>
 	<package name="emp" extends="struts-default">
+	   
 	
 		<!-- 全局视图 -->
 		<!-- <global-results>
@@ -26,6 +27,7 @@
 			<!-- 列表展示 -->
 			<result name="list">/microcredit/displayInfo.jsp</result>
 			<result name="editClient">/microcredit/persondetail.jsp</result>
+			<result name="listAction" type="redirectAction">loan_loanList</result>
 		</action>
 		
 		<action name="lclient_*" class="loanClientfoAction" method="{1}">

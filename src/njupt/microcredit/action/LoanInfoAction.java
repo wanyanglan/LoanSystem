@@ -13,6 +13,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.util.ValueStack;
 
 import njupt.microcredit.entity.ClientInfo;
+import njupt.microcredit.entity.LoanAndClient;
 import njupt.microcredit.entity.LoanInfo;
 import njupt.microcredit.service.IClientInfoService;
 import njupt.microcredit.service.ILoanInfoService;
@@ -57,6 +58,14 @@ public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInf
 		return clientInfo;
 	}
 	
+	private LoanAndClient loanAndClient = new LoanAndClient();
+	public LoanAndClient getLoanAndClient() {
+		return loanAndClient;
+	}
+	public void setLoanAndClient(LoanAndClient loanAndClient) {
+		this.loanAndClient = loanAndClient;
+	}
+	
 	
 	//模型驱动
 	@Override
@@ -97,38 +106,39 @@ public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInf
 	public String viewClientLoanInfo(){
 		//获取要查看的贷款记录id
 		int loanId = loanInfo.getLoanId();
-//		System.out.println(loanId);
 		
 		// 根据贷款的主键查询信息
-		LoanInfo loanInfo = loanInfoService.findById(loanId);
+		LoanInfo loanInfo = loanInfoService.findById(loanId);		
 		
-		//根据贷款的信息查询客户的信息
-		ClientInfo clientInfo = loanInfo.getClientInfoID();
-		
-//		//数据回显
-//		ValueStack vStack = ActionContext.getContext().getValueStack();
-//		vStack.pop();    //移除栈顶元素
-//		vStack.push(loanInfo);   //入站
-		
-		//保存贷款数据
-		request.put("loanInfo", loanInfo);
+		//数据回显
+		ValueStack vs = ActionContext.getContext().getValueStack();
+		vs.pop();  //移除栈顶元素  
+		vs.push(loanInfo); //入栈
 		
 		return "editClient";
 	}
 	
 	/**
-	 * 2.2修改客户数据
+	 * 2.2修改客户数据 - 确认修改
 	 */
-	public String updateClientInfo() {
-		//根据客户id,查询客户对象；设置到员工属性中
-		ClientInfo clientInfo = clientInfoService.findById(clientId);
+	public String updateClientInfo() {	
 		
+	
 		//更新客户信息
-		clientInfoService.update(clientInfo);
-//		loanInfo.setClientInfoID(clientInfo);
-//		
-//		//更新贷款信息
-//		loanInfoService.update(loanInfo);
+		clientInfoService.update(loanInfo.getClientInfoID());
+		
+		//设置贷款部分信息
+		loanInfo.setClientName(loanInfo.getClientInfoID().getClientName());
+		loanInfo.setClientAge(loanInfo.getClientInfoID().getClientAge());
+		loanInfo.setPhoneNumber(loanInfo.getClientInfoID().getPhoneNumber());
+		loanInfo.setIdentifyType(loanInfo.getClientInfoID().getIdentifyType());
+		loanInfo.setIdentifyNum(loanInfo.getClientInfoID().getIdentifyNum());
+		
+		System.out.println(loanInfo);
+		//更新贷款信息
+		loanInfoService.update(loanInfo);
+		
+		System.out.println();
 		return "listAction";
 	}
 	

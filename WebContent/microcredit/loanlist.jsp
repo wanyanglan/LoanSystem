@@ -154,7 +154,7 @@
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<s:form action="/lclient_save" method="post">
+							<s:form action="/lclient_save" method="post" theme="simple">
 								<!--
 	                                	作者：offline
 	                                	时间：2018-11-13
@@ -381,9 +381,8 @@
 								<!--最后提交部分-->
 								<div class="row">
 									<div class="form-group">
-										<button class="btn btn-default col-md-3" type="submit">提交申请</button>
-										<!-- <button class="btn btn-default col-md-4">保存信息</button> -->
-										<button class="btn btn-default col-md-3" type="reset">撤销</button>
+										<button class="btn btn-info col-md-3" type="submit">提交申请</button>
+										<button class="btn btn-danger col-md-3" type="reset">撤销</button>
 									</div>
 								</div>
 								

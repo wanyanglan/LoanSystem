@@ -94,7 +94,7 @@
 					<div class="sBox">
 						<ul class="navContent" style="display:block">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />首页</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
 								<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
 							</li>
 						</ul>
@@ -104,11 +104,11 @@
 						</div>
 						<ul class="navContent" style="display:none">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />账号管理</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
 								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
 							</li>
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />黑名单管理</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
 								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
 							</li>
 						</ul>
@@ -117,19 +117,19 @@
 						<div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">贷款管理</span></div>
 						<ul class="navContent" style="display:block">
 							<li class="active">
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />申请列表</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
 								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
 							</li>
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />审批列表</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
 								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">审批列表</span></a>
 							</li>
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />放款列表</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />放款列表</div>
 								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">放款列表</span></a>
 							</li>
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="img/leftimg.png" />贷后催收</div>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />贷后催收</div>
 								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">贷后催收</span></a>
 							</li>
 						</ul>
@@ -150,13 +150,14 @@
 								</div>
 							</div>
 							<div class="col-lg-12">
-								<s:form action="/lclient_updateClientInfo" method="post"></s:form>
+								<s:form action="/loan_updateClientInfo" method="post" theme="simple">
 									<!--
                                     	作者：offline
                                     	时间：2018-11-24
                                     	描述：个人信息起始行
                                     -->
-                                    <s:hidden name="clientId" id="id" value="%{clientId}"></s:hidden>
+                                    <%-- <input type="hidden" name="clientId" value="<s:property value="#request.loanInfo.clientInfoID.clientId"></s:property>"></input> --%>
+									<s:hidden name="clientInfoID.clientId" id="id" value="%{clientInfoID.clientId}"></s:hidden>
 									<!--个人信息第一行-->
 									<div class="row">
 										<div class="form-group">
@@ -165,29 +166,32 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">客户姓名:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientName" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientName"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clientName" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientName"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientName" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">性别:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientGender" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientGender"></s:property>" disabled/>
-										
+												<%-- <input type="text" name="clientGender" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientGender"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientGender" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">年龄:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientAge" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientAge"></s:property>" disabled/>
-
+												<%-- <input type="text" name="clientAge" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientAge"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientAge" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">出生日期:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientBirthday" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientBirthday"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clientBirthday" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientBirthday"></s:property>" disabled/> --%>
+												<!-- 回显日期格式 -->																		
+												<s:textfield name="clientInfoID.clientBirthday" cssClass="form-control change" disabled="true">  
+												   <s:param name="value"><s:date name="clientInfoID.clientBirthday" format="yyyy-MM-dd"/></s:param>  
+												</s:textfield>  
 											</div>
 										</div>
 									</div>
@@ -196,15 +200,15 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件类型:</label>
 											<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="identifyType" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.identifyType"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="identifyType" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.identifyType"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.identifyType" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件号码:</label>
 											<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="identifyNum" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.identifyNum"></s:property>" disabled/>
-						
+												<%-- <input type="text" name="identifyNum" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.identifyNum"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.identifyNum" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 									</div>
@@ -213,28 +217,29 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">联系电话:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="phoneNumber" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.phoneNumber"></s:property>" disabled/>
+												<%-- <input type="text" name="phoneNumber" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.phoneNumber"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.phoneNumber" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">电子邮箱:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientEmail" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientEmail"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clientEmail" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientEmail"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientEmail" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">户籍:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientCensus" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientCensus"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clientCensus" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientCensus"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientCensus" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">学历:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clientEducation" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clientEducation"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clientEducation" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clientEducation"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clientEducation" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 									</div>
@@ -242,22 +247,22 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">婚姻状况:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="maritalStatus" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.maritalStatus"></s:property>" disabled/> 
-												
+												<%-- <input type="text" name="maritalStatus" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.maritalStatus"></s:property>" disabled/>  --%>
+												<s:textfield name="clientInfoID.maritalStatus" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">家庭地址:</label>
 											<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="clentAddress" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.clentAddress"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="clentAddress" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.clentAddress"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.clentAddress" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">居住年限:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="addrYears" class="form-control" value="<s:property value="#request.loanInfo.clientInfoID.addrYears"></s:property>" disabled/>
-												
+												<%-- <input type="text" name="addrYears" class="form-control change" value="<s:property value="#request.loanInfo.clientInfoID.addrYears"></s:property>" disabled/> --%>
+												<s:textfield name="clientInfoID.addrYears" cssClass="form-control change" disabled="true"></s:textfield>
 											</div>
 										</div>
 										
@@ -267,11 +272,11 @@
 									<!--最后提交部分-->
 									<div class="row" >
 										<div class="form-group">
-											<button class="btn btn-info col-md-1" type="submit" style="margin-left: 80%;margin-top: 30px;margin-right: 10px;">编辑</button>	
+											<button class="btn btn-info col-md-1" type="button" style="margin-left: 80%;margin-top: 30px;margin-right: 10px;" id="editId">编辑</button>	
 											<button class="btn btn-info col-md-1" type="submit" style="margin-top: 30px;">提交申请</button>
 										</div>
 									</div>
-								</form>
+								
 									<!--
                                     	作者：offline
                                     	时间：2018-11-13
@@ -284,26 +289,32 @@
 											<label >贷款信息</label>
 										</div>
 										<s:hidden name="loanId" id="id" value="%{loanId}"></s:hidden>
+										<%-- <input type="hidden" name="loanId" value="<s:property value="#request.loanInfo.loanId"></s:property>"></input> --%>
+										
 										<div class="row">
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
 											<div class="col-md-2" style="padding-left: 0px;">
-												<input type="text" name="loanType" class="form-control" value="<s:property value="#request.loanInfo.loanType"></s:property>" disabled />
+												<%-- <input type="text" name="loanType" class="form-control" value="<s:property value="#request.loanInfo.loanType"></s:property>" disabled /> --%>
+												<s:textfield name="loanType" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 	
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款种类:</label>
 											<div class="col-md-2" style="padding-left: 0px;">
-												<input type="text" name="loanClass" class="form-control" value="<s:property value="#request.loanInfo.loanClass"></s:property>" disabled />
+												<%-- <input type="text" name="loanClass" class="form-control" value="<s:property value="#request.loanInfo.loanClass"></s:property>" disabled /> --%>
+												<s:textfield name="loanClass" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">担保方式:</label>
 											<div class="col-md-2" style="padding-left: 0px;">
-												<input type="text" name="guranteeMethod" class="form-control" value="<s:property value="#request.loanInfo.guranteeMethod"></s:property>" disabled/>
+												<%-- <input type="text" name="guranteeMethod" class="form-control" value="<s:property value="#request.loanInfo.guranteeMethod"></s:property>" disabled/> --%>
+												<s:textfield name="guranteeMethod" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
+										<s:hidden name="appliTime" value="%{appliTime}" cssClass="form-control" readonly="true" />
 									</div>
 
 									<!--
@@ -315,27 +326,30 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right; margin-top: 15px;">贷款用途:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="loanUse" class="form-control"  value="<s:property value="#request.loanInfo.loanUse"></s:property>" disabled />
+												<%-- <input type="text" name="loanUse" class="form-control"  value="<s:property value="#request.loanInfo.loanUse"></s:property>" disabled /> --%>
+												<s:textfield name="loanUse" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">申请金额:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="appliAmount" class="form-control"  value="<s:property value="#request.loanInfo.appliAmount"></s:property>" disabled />
+												<%-- <input type="text" name="appliAmount" class="form-control"  value="<s:property value="#request.loanInfo.appliAmount"></s:property>" disabled /> --%>
+												<s:textfield name="appliAmount" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">贷款期限:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="loanTerm" class="form-control"  value="<s:property value="#request.loanInfo.loanTerm"></s:property>" disabled />
+												<%-- <input type="text" name="loanTerm" class="form-control"  value="<s:property value="#request.loanInfo.loanTerm"></s:property>" disabled /> --%>
+												<s:textfield name="loanTerm" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">最大分期额:</label>
 											<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-												<input type="text" name="maxInstallment" class="form-control"  value="<s:property value="#request.loanInfo.maxInstallment"></s:property>" disabled />
-
+												<%-- <input type="text" name="maxInstallment" class="form-control"  value="<s:property value="#request.loanInfo.maxInstallment"></s:property>" disabled /> --%>
+												<s:textfield name="maxInstallment" cssClass="form-control" readonly="true"></s:textfield>
 											</div>
 										</div>
 									</div>
@@ -349,10 +363,12 @@
 										<div class="form-group">
 											<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 10px;">申请理由:</label>
 											<div class="col-md-11 " style="padding-left: 0px;margin-top: 10px;">
-												<textarea name="appliReason" class="form-control" cols="30" rows="8" disabled><s:property value="#request.loanInfo.appliReason"/></textarea>
+												<%-- <textarea name="appliReason" class="form-control" cols="30" rows="8" disabled><s:property value="#request.loanInfo.appliReason"/></textarea> --%>
+												<s:textarea name="appliReason" cssClass="form-control" cols="30" rows="8" readonly="true"></s:textarea>
 											</div>
 										</div>										
-									</div>									
+									</div>
+								</s:form>									
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -364,6 +380,11 @@
 		<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
+		<script type="text/javascript">			
+			$("#editId").click(function(){
+				$(".change").attr("disabled",false);		
+			});
+		</script>
 	
 	</body>
 
