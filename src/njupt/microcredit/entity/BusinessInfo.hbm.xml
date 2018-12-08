@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="BusinessInfo" table="business_info">
+	    <id name="id" column="ID">
+	    	<generator class="native"></generator>
+	    </id>
+		<property name="custId" column="CUST_ID"></property>
+		<property name="companyId" column="COMPANY_ID"></property>
+		<property name="legalId" column="LEGAL_ID"></property>
+		<property name="licenseNum" column="LICENSE_NUM"></property>
+		<property name="licenseDueDate" column="LICENSE_DUE_DATE"></property>
+		<property name="nationalTaxNum" column="NATIONAL_TAX_NUM"></property>
+		<property name="localTaxNum" column="LOCAL_TAX_NUM"></property>
+		<property name="organizationCode" column="ORGANIZATION_CODE"></property>
+		<property name="openPermit" column="OPEN_PERMIT"></property>
+		<property name="companyCode" column="COMPANY_CODE"></property>
+		<property name="registerCapital" column="REGISTER_CAPITAL"></property>
+		<property name="openDueDate" column="OPEN_DUE_DATE"></property>
+		<property name="foreigrAccount" column="FOREIGR_ACCOUNT"></property>
+		<property name="localAccount" column="LOCAL_ACCOUNT"></property>
+		<property name="createDate" column="CREATE_DATE"></property>
+		<property name="createUser" column="CREATE_USER"></property>
+		
+	</class>
+
+</hibernate-mapping>

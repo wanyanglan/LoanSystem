@@ -22,6 +22,30 @@
 	<bean id="loanInfoService" class="njupt.microcredit.service.impl.LoanInfoService">
 		<property name="loanInfoDao" ref="loanInfoDao"></property>
 	</bean>	
+
+	<bean id="custBasicInfoService" class="njupt.microcredit.service.impl.CustBasicInfoService">
+		<property name="custBasicInfoDao" ref="custBasicInfoDao"></property>
+	</bean>	
+	
+	<bean id="customerInfoService" class="njupt.microcredit.service.impl.CustomerInfoService">
+		<property name="customerInfoDao" ref="customerInfoDao"></property>
+	</bean>	
+	<!-- 企业贷款 -->
+	<bean id="businessInfoService" class="njupt.microcredit.service.impl.BusinessInfoService">
+		<property name="businessInfoDao" ref="businessInfoDao"></property>
+	</bean>	
+	
+	<bean id="companyInfoService" class="njupt.microcredit.service.impl.CompanyInfoService">
+		<property name="companyInfoDao" ref="companyInfoDao"></property>
+	</bean>	
+	
+	<bean id="legalPersonInfoService" class="njupt.microcredit.service.impl.LegalPersonInfoService">
+		<property name="legalPersonInfoDao" ref="legalPersonInfoDao"></property>
+	</bean>	
+	
+	<bean id="loanApplyInfoService" class="njupt.microcredit.service.impl.LoanApplyInfoService">
+		<property name="loanApplyInfoDao" ref="loanApplyInfoDao"></property>
+	</bean>	
 	
 </beans>     
 

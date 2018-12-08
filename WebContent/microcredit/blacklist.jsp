@@ -100,15 +100,15 @@
 						</ul>
 					</div>
 					<div class="sBox">
-						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">用户中心</span></div>
+						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">客户管理</span></div>
 						<ul class="navContent" style="display:block">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私客户</div>
+								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私客户</span></a>
 							</li>
 							<li class="active">
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公客户</div>
+								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公客户</span></a>
 							</li>
 						</ul>
 					</div>
@@ -116,21 +116,16 @@
 						<div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">贷款管理</span></div>
 						<ul class="navContent" style="display:none">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />个人申请列表</div>
+								<a href="client_loanPersonList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">个人申请列表</span></a>
 							</li>
+							
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">审批列表</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />企业申请列表</div>
+								<a href="company_comList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">企业申请列表</span></a>
 							</li>
-							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />放款列表</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">放款列表</span></a>
-							</li>
-							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />贷后催收</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">贷后催收</span></a>
-							</li>
+							
+							
 						</ul>
 					</div>
 				</div>
@@ -138,58 +133,121 @@
 			<!--
             	描述：右侧正文部分
             -->
-			<div class="right-product right-full">
+			<div class="right-product view-product right-full">
 				<div class="container-fluid">
-					<div class="info-center">
+					<div class="manage account-manage info-center">
 						<div class="page-header">
 							<div class="pull-left">
-								<h4>黑名单中心</h4>
+								<h4>会员中心</h4>
 							</div>
+							<div class="pull-right">
+		                        <button type="button" class="btn btn-mystyle btn-sm">搜索</button>
+		                        <button type="button" class="btn btn-mystyle btn-sm">返回</button>
+		                    </div>
 						</div>
-						<div class="info-center-title">
-							<span class="padding-large-right manage-title pull-left">
-                           <a class="active" href="#">全部人员</a>
-                        </span>
-							<span class="padding-large-right pull-left"><a href="#">已拉黑人员(0)</a></span>
-							<span class="pull-left"><a href="#">待拉黑人员(0)</a></span>
-						</div>
-						<div class="clearfix"></div>
-						<div class="table-margin">
-							<table class="table table-bordered table-header">
-								<thead>
-									<tr>
-										<td class="w20">客户姓名</td>
-										<td class="w1">性别</td>
-										<td class="w30">证件信息</td>
-										<td class="w25">创建时间</td>
-										<td class="w15">状态</td>
-									</tr>
-								</thead>
-								
-								<tbody>
-									<tr>
-										<td>2</td>
-										<td>2</td>
-										<td>2</td>
-										<td>2</td>
-										<td>2</td>
-									</tr>
-									
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="show-page hidden">
-						<ul>
-						</ul>
+						
+						<div class="manage-record">
+							<h6 class="margin-big-top"></h6>
+							<div class="clearfix"></div>
+							<div class="table-margin">
+								<div class="col-lg-12" style="margin-bottom: 20px;border: solid 1px #D6D6D6;">
+									<form action="#" method="post">
+										<div class="row" style="margin-top: 5px;">
+											<div class="form-group">
+												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
+												<div class="col-md-2" style="padding-left: 0px;">
+													<input type="text" name="use" class="form-control" placeholder="企业名称" />
+												</div>
+											</div>
+	
+											<div class="form-group">
+												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">手机号码:</label>
+												<div class="col-md-2" style="padding-left: 0px;">
+													<input type="text" name="use" class="form-control" placeholder="营业执照" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">法人信息:</label>
+												<div class="col-md-2" style="padding-left: 0px;">
+													<input type="text" name="use" class="form-control"  placeholder="法人姓名或证件号码"/>
+												</div>
+											</div>
+											
+										</div>
+										<!--最后提交部分-->
+										<div class="row" style="margin-bottom: 20px;margin-top: 20px;">
+											<div class="form-group">
+												<button class="btn btn-info col-md-1" type="submit" style="margin-left: 75%;margin-right: 20px;" id="editId">搜索</button>	
+												<button class="btn btn-danger col-md-1" type="reset" >重置</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<table class="table table-bordered table-header" style="text-align: center;font-size: 17px;">
+									<thead>
+										<tr>
+											<td class="w15">客户名称</td>
+											<td class="w15">营业执照</td>	
+											<td class="w10">法人姓名</td>							
+											<td class="w20">法人证件号码</td>
+											<td class="w15">单位电话</td>
+											<td class="w10">客户经理</td>
+											<td class="w15">操作</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>xx有限责任公司</td>
+											<td>0000***0000</td>
+											<td>赵xx</td>
+											<td>2134t238747921</td>
+											<td>0571-888888</td>
+											<td>aa</td>
+											<td>
+												<a href="persondetail.html" style="color: blue;">详情</a>&nbsp;&nbsp;
+												<a href="persondetail.html" style="color: blue;">编辑</a>&nbsp;&nbsp;
+												<a href="persondetail.html" style="color: blue;">删除</a>
+											</td>											
+											
+										</tr>
+										<tfoot>
+				                          	<tr>
+					                            <td colspan="7">
+					                              <div class="pull-right">
+					                                  <nav>
+					                                      <ul class="pagination">
+					                                        <li>
+					                                          <a href="#" aria-label="Previous">
+					                                            <span aria-hidden="true">&laquo;</span>
+					                                          </a>
+					                                        </li>
+					                                        <li><a href="#">1</a></li>
+					                                        <li><a href="#">2</a></li>
+					                                        <li><a href="#">3</a></li>
+					                                        <li><a href="#">4</a></li>
+					                                        <li><a href="#">5</a></li>
+					                                        <li>
+					                                          <a href="#" aria-label="Next">
+					                                            <span aria-hidden="true">&raquo;</span>
+					                                          </a>
+					                                        </li>
+					                                      </ul>
+					                                    </nav>
+					                              </div>
+					                            </td>
+				                          	</tr>
+				                        </tfoot>
+									</tbody>
+								</table>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
 		</div>
-		<script src="${pageContext.request.contextPath}/microcredit/script/jquery-1.11.1.min.js" type="text/javascript"></script>
-		<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
-		<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
+		<script src="script/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="script/jquery.cookie.js" type="text/javascript"></script>
+		<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="script/function.js" type="text/javascript"></script>
 	</body>
-
 </html>

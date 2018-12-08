@@ -100,39 +100,33 @@
 						</ul>
 					</div>
 					<div class="sBox">
-						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">用户中心</span>
+						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">客户管理</span>
 						</div>
 						<ul class="navContent" style="display:none">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私管理</div>
+								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
 							</li>
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公管理</div>
+								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
 							</li>
-
 						</ul>
 					</div>
 					<div class="sBox">
 						<div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">贷款管理</span></div>
 						<ul class="navContent" style="display:block">
 							<li class="active">
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-								<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />个人申请列表</div>
+								<a href="client_loanPersonList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">个人申请列表</span></a>
 							</li>
+							
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">审批列表</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />企业申请列表</div>
+								<a href="company_comList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">企业申请列表</span></a>
 							</li>
-							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />放款列表</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">放款列表</span></a>
-							</li>
-							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />贷后催收</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">贷后催收</span></a>
-							</li>
+							
+							
 						</ul>
 					</div>
 				</div>
@@ -151,7 +145,7 @@
 						</div>
 						<div class="manage-detail">
 							<div class="manage-detail-con clearfix">
-								<a class="custom" href="lclient_viewAdd">新建申请</a>
+								<a class="custom" href="client_viewAdd">新建申请</a>
 							</div>
 						</div>
 						<div class="manage-record">
@@ -161,43 +155,69 @@
 								<table class="table table-bordered table-header" style="text-align: center;font-size: 15px;">
 									<thead >
 										<tr>
-											<td class="w7">客户姓名</td>
-											<td class="w5">性别</td>	
-											<td class="w5">年龄</td>							
-											<td class="w10">手机号</td>
-											<td class="w10">证件类型</td>
-											<td class="w20">证件号</td>
-											<td class="w10">贷款类型</td>
+											<td class="w15">客户信息</td>																	
+											<td class="w15">手机号</td>											
+											<td class="w20">证件信息</td>
+											<td class="w15">贷款类型</td>
 											<td class="w10">申请金额(元)</td>
 											<td class="w15">创建时间</td>
-											<td class="w8">操作</td>
+											<td class="w10">操作</td>
 										</tr>
 									</thead>
 									<tbody >
 								        <s:if test="#request.loanList != null">
 								        	<s:iterator var="loanInfo" value="#request.loanList" status="st">
 												<tr>
-													<td><s:property value="#loanInfo.clientName" /></td>
-													<td><s:property value="#loanInfo.clientInfoID.clientGender"/></td>
-													<td><s:property value="#loanInfo.clientAge" /></td>
-													<td><s:property value="#loanInfo.phoneNumber" /></td>
-													<td><s:property value="#loanInfo.identifyType" /></td>
-													<td><s:property value="#loanInfo.identifyNum" /></td>
-													<td><s:property value="#loanInfo.loanClass" /></td>
-													<td><s:property value="#loanInfo.appliAmount" /></td>
-													<td><s:date name="#loanInfo.appliTime" format="yyyy-MM-dd HH:mm"/></td>
 													<td>
-														<s:a href="loan_viewClientLoanInfo?loanId=%{#loanInfo.loanId}">详情</s:a>
+														<s:property value="#loanInfo[1]" />&nbsp;&nbsp;&nbsp;
+														<s:property value="#loanInfo[2]"/>&nbsp;&nbsp;&nbsp;
+														<s:property value="#loanInfo[3]" />岁
+													</td>													
+													<td><s:property value="#loanInfo[4]" /></td>
+													
+													<td><s:property value="#loanInfo[5]" /></td>
+													<td><s:property value="#loanInfo[7]" /></td>
+													<td><s:property value="#loanInfo[8]" /></td>
+													<td><s:date name="#loanInfo[9]" format="yyyy-MM-dd HH:mm"/></td>
+													<td>
+														<s:a href="client_viewClientLoanInfo?loanApplyInfo.loanId=%{#loanInfo[6]}&customerInfo.id=%{#loanInfo[0]}">详情</s:a>
 													</td>
 												</tr>
 											</s:iterator>
 										</s:if>
 										<s:else>
 											<tr>
-												<td colspan="9" align="center">对不起，暂时没有贷款信息！请先录入</td>
+												<td colspan="7" align="center">对不起，暂时没有个人贷款信息！请先录入</td>
 											</tr>
 										</s:else>
 									</tbody>
+									<tfoot>
+			                          	<tr>
+				                            <td colspan="7">
+				                              <div class="pull-right">
+				                                  <nav>
+				                                      <ul class="pagination">
+				                                        <li>
+				                                          <a href="#" aria-label="Previous">
+				                                            <span aria-hidden="true">&laquo;</span>
+				                                          </a>
+				                                        </li>
+				                                        <li><a href="#">1</a></li>
+				                                        <li><a href="#">2</a></li>
+				                                        <li><a href="#">3</a></li>
+				                                        <li><a href="#">4</a></li>
+				                                        <li><a href="#">5</a></li>
+				                                        <li>
+				                                          <a href="#" aria-label="Next">
+				                                            <span aria-hidden="true">&raquo;</span>
+				                                          </a>
+				                                        </li>
+				                                      </ul>
+				                                    </nav>
+				                              </div>
+				                            </td>
+			                          	</tr>
+				                    </tfoot>
 								</table>
 							</div>
 

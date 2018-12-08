@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="CustomerInfo" table="customer_info">
+	    <id name="id" column="ID">
+	    	<generator class="native"></generator>
+	    </id>
+		<property name="custId" column="CUST_ID"></property>
+		<property name="custName" column="CUST_NAME"></property>
+		<property name="custGender" column="CUST_GENDER"></property>
+		<property name="custAge" column="CUST_AGE"></property>
+		<property name="clientBirthday" column="CUST_BIRTHDAY"></property>
+		<property name="phoneNum" column="PHONE_NUM"></property>
+		<property name="identifyType" column="IDENTIFY_TYPE"></property>
+		<property name="identifyNum" column="IDENTIFY_NUM"></property>
+		<property name="maritalStatus" column="MARITAL_STATUS"></property>
+		<property name="custEducation" column="CUST_EDUCATION"></property>
+		<property name="custCensus" column="CUST_CENSUS"></property>
+		<property name="custAddr" column="CUST_ADDR"></property>
+		<property name="addrYears" column="ADDR_YEARS"></property>
+		<property name="jobTitle" column="JOB_TITLE"></property>
+		<property name="occupationTitle" column="OCCUPATION_TITLE"></property>
+		<property name="monthlyIncome" column="MONTHLY_INCOME"></property>
+		<property name="unitService" column="UNIT_SERVICE"></property>
+		<property name="custEmail" column="CUST_EMAIL"></property>
+		<property name="badRecord" column="BAD_RECORD"></property>
+		<property name="unitType" column="UNIT_TYPE"></property>
+		<property name="companyAddr" column="COMPANY_ADDR"></property>
+		<property name="companyPhone" column="COMPANY_PHONE"></property>
+		<property name="companyName" column="COMPANY_NAME"></property>
+		<property name="belongUserId" column="BELONG_USER_ID"></property>
+		<property name="createDate" column="CREATE_DATE"></property>
+		<property name="createOr" column="CREATE_OR"></property>
+		<property name="updateDate" column="UPDATE_DATE"></property>
+		<property name="updateOr" column="UPDATE_OR"></property>
+		
+		
+				
+		
+	</class>
+
+</hibernate-mapping>

@@ -95,6 +95,7 @@ public class LoanInfoAction extends ActionSupport implements ModelDriven<LoanInf
 		
 		//查询所有的贷款信息
 		List<LoanInfo> loanList = loanInfoService.getAll();
+//		System.out.println(loanList);
 		//保存贷款信息到request
 		request.put("loanList",loanList);
 		return "list";

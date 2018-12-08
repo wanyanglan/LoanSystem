@@ -28,7 +28,7 @@ public class LoanClientAction extends ActionSupport implements ModelDriven<LoanA
 	//接收框架运行时候传入的request对象的map
 	private Map<String,Object> request;
 	@Override
-	public void setRequest(Map<String, Object> arg0) {
+	public void setRequest(Map<String, Object> request) {
 		this.request = request;		
 	}
 	@Override

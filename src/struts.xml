@@ -23,16 +23,23 @@
 			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
 		</global-exception-mappings> -->
 		
-		<action name="loan_*" class="loanInfoAction" method="{1}">
+		
+		<!-- 个人信息贷款 -->
+		<action name="client_*" class="loanAndClientAction" method="{1}">
 			<!-- 列表展示 -->
 			<result name="list">/microcredit/displayInfo.jsp</result>
 			<result name="editClient">/microcredit/persondetail.jsp</result>
-			<result name="listAction" type="redirectAction">loan_loanList</result>
+			<result name="listAction" type="redirectAction">client_loanPersonList</result>
+			<result name="add">/microcredit/loanlist.jsp</result>
 		</action>
 		
-		<action name="lclient_*" class="loanClientfoAction" method="{1}">
-			<result name="add">/microcredit/loanlist.jsp</result>
-			<result name="listAction" type="redirectAction">loan_loanList</result>
+		<!-- 企业信息贷款 -->
+		
+		<action name="company_*" class="loanCompanyAction" method="{1}">
+			<result name="listcompany">/microcredit/bussnessdisplayInfo.jsp</result>
+			<result name="insert">/microcredit/bussnessloan.jsp</result>
+			<result name="listAction" type="redirectAction">company_comList</result>
+			<result name="editCompany">/microcredit/businessdetail.jsp</result>
 		</action>
 		
 		

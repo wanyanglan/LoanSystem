@@ -26,121 +26,114 @@
 	    	描述：导航栏部分
         -->
 	<nav class="nav navbar-default navbar-mystyle navbar-fixed-top">
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand mystyle-brand"><span class="glyphicon glyphicon-home"></span></a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="li-border">
-					<a class="mystyle-color" href="#">xxx信贷系统</a>
-				</li>
-			</ul>
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> 
+			        <span class="icon-bar"></span> 
+			        <span class="icon-bar"></span> 
+			        <span class="icon-bar"></span> 
+			    </button>
+				<a class="navbar-brand mystyle-brand"><span class="glyphicon glyphicon-home"></span></a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="li-border">
+						<a class="mystyle-color" href="#">xxx信贷系统</a>
+					</li>
+				</ul>
 
-			<ul class="nav navbar-nav pull-right">
-				<li class="dropdown li-border">
-					<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">帮助与文档<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">帮助与文档</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#">论坛</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#">博客</a>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown li-border">
-					<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">00000000@qq.com<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">退出</a>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">换肤<span class="caret"></span></a>
-					<ul class="dropdown-menu changecolor">
-						<li id="blue">
-							<a href="#">蓝色</a>
-						</li>
-						<li class="divider"></li>
-						<li id="green">
-							<a href="#">绿色</a>
-						</li>
-						<li class="divider"></li>
-						<li id="orange">
-							<a href="#">橙色</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!--
+				<ul class="nav navbar-nav pull-right">
+					<li class="dropdown li-border">
+						<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">帮助与文档<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">帮助与文档</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">论坛</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">博客</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown li-border">
+						<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">00000000@qq.com<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">退出</a>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle mystyle-color" data-toggle="dropdown">换肤<span class="caret"></span></a>
+						<ul class="dropdown-menu changecolor">
+							<li id="blue">
+								<a href="#">蓝色</a>
+							</li>
+							<li class="divider"></li>
+							<li id="green">
+								<a href="#">绿色</a>
+							</li>
+							<li class="divider"></li>
+							<li id="orange">
+								<a href="#">橙色</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--
         	作者：offline
         	时间：2018-11-10
         	描述：与导航栏分开的下半部分
         -->
-	<div class="down-main">
-		<!--描述：左侧目录部分-->
-		<div class="left-main left-full">
-			<div class="sidebar-fold"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
-			<div class="subNavBox">
-				<div class="sBox">
-					<ul class="navContent" style="display:block">
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
-							<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
-						</li>
-					</ul>
-				</div>
-				<div class="sBox">
-					<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">用户中心</span>
+		<div class="down-main">
+			<!--描述：左侧目录部分-->
+			<div class="left-main left-full">
+				<div class="sidebar-fold"><span class="glyphicon glyphicon-menu-hamburger"></span></div>
+				<div class="subNavBox">
+					<div class="sBox">
+						<ul class="navContent" style="display:block">
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />首页</div>
+								<a href="index.jsp"><span class="sublist-icon glyphicon glyphicon-home"></span><span class="sub-title">首页</span></a>
+							</li>
+						</ul>
 					</div>
-					<ul class="navContent" style="display:none">
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />账号管理</div>
-							<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">账号管理</span></a>
-						</li>
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />黑名单管理</div>
-							<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">黑名单管理</span></a>
-						</li>
-
-					</ul>
-				</div>
-				<div class="sBox">
-					<div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">贷款管理</span></div>
-					<ul class="navContent" style="display:block">
-						<li class="active">
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />申请列表</div>
-							<a href="loan_loanList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">申请列表</span></a>
-						</li>
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />审批列表</div>
-							<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">审批列表</span></a>
-						</li>
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />放款列表</div>
-							<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">放款列表</span></a>
-						</li>
-						<li>
-							<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />贷后催收</div>
-							<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">贷后催收</span></a>
-						</li>
-					</ul>
+					<div class="sBox">
+						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">客户管理</span>
+						</div>
+						<ul class="navContent" style="display:none">
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私管理</div>
+								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
+							</li>
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公管理</div>
+								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
+							</li>
+						</ul>
+					</div>
+					<div class="sBox">
+						<div class="subNav sublist-up"><span class="title-icon glyphicon glyphicon-chevron-up"></span><span class="sublist-title">贷款管理</span></div>
+						<ul class="navContent" style="display:block">
+							<li class="active">
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />个人申请列表</div>
+								<a href="client_loanPersonList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">个人申请列表</span></a>
+							</li>
+							
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />企业申请列表</div>
+								<a href="company_comList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">企业申请列表</span></a>
+							</li>
+									
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
 		<!--
             	描述：右侧正文部分
             -->
@@ -154,26 +147,22 @@
 							</div>
 						</div>
 						<div class="col-lg-12">
-							<s:form action="/lclient_save" method="post" theme="simple">
-								<!--
-	                                	作者：offline
-	                                	时间：2018-11-13
-	                                	描述：贷款信息
-	                            	-->
-								<div class="form-group">
-									<label for="inputSex" style="margin-top: 20px;">贷款信息</label>
-								</div>
-								<!--
+							<s:form action="/client_save" method="post" theme="simple">
+								
+								<!--customerInfoService
                                     	作者：offline
                                     	时间：2018-11-13
                                     	描述：第一行
 									-->
 									
-								<div class="row">
+								<div class="row" style="margin-top: -20px;">
+									<div class="form-group">
+										<label for="inputSex" style="margin-top: 20px;">贷款信息</label>
+									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="loanType" class="form-control" required>
+											<select id="inputSex" name="loanApplyInfo.loanType" class="form-control" required>
 												<option value="新增贷款" >新增贷款</option>
 												<option value="收回再贷" >收回再贷</option>
 												<option value="借新还旧" >借新还旧</option>
@@ -185,7 +174,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款种类:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="loanClass" class="form-control" required>
+											<select id="inputSex" name="loanApplyInfo.loanClass" class="form-control" required>
 												<option value="住房贷款">住房贷款</option>
 												<option value="汽车消费贷款">汽车消费贷款</option>
 												<option value="耐用消费品贷款">耐用消费品贷款</option>
@@ -201,7 +190,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">担保方式:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<select id="inputSex" name="guranteeMethod" class="form-control" required>
+											<select id="inputSex" name="loanApplyInfo.guranteeMethod" class="form-control" required>
 												<option value="保证">保证</option>
 												<option value="抵押">抵押</option>
 												<option value="质押">质押</option>
@@ -220,26 +209,26 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right; margin-top: 15px;">贷款用途:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="loanUse" class="form-control" placeholder="实际用途" required/>
+											<input type="text" name="loanApplyInfo.loanUse" class="form-control" placeholder="实际用途" required/>
 										</div>
 									</div>
 
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">申请金额:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="appliAmount" class="form-control" placeholder="填写整数金额" required/>
+											<input type="text" name="loanApplyInfo.applyAmount" class="form-control" placeholder="填写整数金额" required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">贷款期限:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="loanTerm" class="form-control" placeholder="期限（月）" required/>
+											<input type="text" name="loanApplyInfo.loanTerm" class="form-control" placeholder="期限（月）" required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">最大分期额:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="maxInstallment" class="form-control" placeholder="每月最大还款额" required/>
+											<input type="text" name="loanApplyInfo.maxInstallment" class="form-control" placeholder="每月最大还款额" required/>
 										</div>
 									</div>
 								</div>
@@ -253,27 +242,28 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 10px;">申请理由:</label>
 										<div class="col-md-11 " style="padding-left: 0px;margin-top: 10px;">
-											<textarea name="appliReason" class="form-control" cols="30" rows="8" ></textarea>
+											<textarea name="loanApplyInfo.appliReason" class="form-control" cols="30" rows="8" ></textarea>
 										</div>
 									</div>
 
-									<div class="form-group">
-										<label style="margin-top: 15px;">个人信息</label>
-									</div>
+									
 								</div>
 
 								<!--个人信息第一行-->
-								<div class="row">
+								<div class="row" style="margin-top: -15px;">
+									<div class="form-group">
+										<label style="margin-top: 15px;">个人信息</label>
+									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">客户姓名:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clientName" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.custName" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">性别:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="clientGender" class="form-control" required>
+											<select id="inputSex" name="customerInfo.custGender" class="form-control" required>
 												<option value="男">男</option>
 												<option value="女">女</option>
 											</select>
@@ -282,13 +272,13 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">年龄:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clientAge" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.custAge" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group ">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">出生日期:</label>
 										<div class="date form_date col-md-2" data-date="" date-date-formate="dd MM yyyy"  data-link-format="yyyy-mm-dd" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clientBirthday" class="form-control" placeholder=" " style="background-color: white;" readonly />
+											<input type="text" name="customerInfo.clientBirthday" class="form-control" placeholder=" " style="background-color: white;" readonly />
 											<span class="add-on"><i class="icon-remove"></i></span>
 											<span class="add-on"><i class="icon-th"></i></span>
 										</div>
@@ -299,7 +289,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件类型:</label>
 										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="identifyType" class="form-control" required>
+											<select id="inputSex" name="customerInfo.identifyType" class="form-control" required>
 												<option value="居民身份证">居民身份证</option>
 												<option value="士兵证">士兵证</option>
 												<option value="军官证">军官证</option>
@@ -310,7 +300,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">证件号码:</label>
 										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="identifyNum" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.identifyNum" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 								</div>
@@ -320,25 +310,25 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">联系电话:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="phoneNumber" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.phoneNum" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">电子邮箱:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clientEmail" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.custEmail" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">户籍:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clientCensus" class="form-control" placeholder=" " required/>
+											<input type="text" name="customerInfo.custCensus" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">学历:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="clientEducation" class="form-control" required>
+											<select id="inputSex" name="customerInfo.custEducation" class="form-control" required>
 												<option value="小学">小学</option>
 												<option value="初中">初中</option>
 												<option value="中专/高中">中专/高中</option>
@@ -354,7 +344,7 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">婚姻状况:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<select id="inputSex" name="maritalStatus" class="form-control" required>
+											<select id="inputSex" name="customerInfo.maritalStatus" class="form-control" required>
 												<option value="未婚">未婚</option>
 												<option value="已婚">已婚</option>
 												<option value="丧偶">丧偶</option>
@@ -366,22 +356,22 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">家庭地址:</label>
 										<div class="col-sm-5" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="clentAddress" class="form-control" placeholder=" " />
+											<input type="text" name="customerInfo.custAddr" class="form-control" placeholder=" " required/>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 15px;">居住年限:</label>
 										<div class="col-md-2" style="padding-left: 0px;margin-top: 10px;">
-											<input type="text" name="addrYears" class="form-control" placeholder="现址居住时间" />
+											<input type="text" name="customerInfo.addrYears" class="form-control" placeholder="现址居住时间" required/>
 										</div>
 									</div>
 								</div>								
 
 
 								<!--最后提交部分-->
-								<div class="row">
+								<div class="row" style="margin-top: 30px;">
 									<div class="form-group">
-										<button class="btn btn-info col-md-3" type="submit">提交申请</button>
+										<button class="btn btn-info col-md-3" type="submit" style="margin-right: 20px;">提交申请</button>
 										<button class="btn btn-danger col-md-3" type="reset">撤销</button>
 									</div>
 								</div>

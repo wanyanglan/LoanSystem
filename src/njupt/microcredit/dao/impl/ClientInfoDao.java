@@ -48,12 +48,14 @@ public class ClientInfoDao implements IClientInfoDao{
 		return (ClientInfo) sessionFactory.getCurrentSession().get(ClientInfo.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<ClientInfo> getAll() {
 		
-		return (List<ClientInfo>) sessionFactory.getCurrentSession().createQuery("from ClientInfo").list();
+		return sessionFactory.getCurrentSession().createQuery("from ClientInfo").list();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<ClientInfo> getAll(String clientName) {
 		

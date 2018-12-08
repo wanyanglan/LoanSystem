@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="CustBasicInfo" table="cust_basic_info">
+	    <id name="custId" column="CUST_ID">
+	    <!-- assigned 表示 -->
+	    	<generator class="assigned"></generator>
+	    </id>
+		<property name="customerType" column="CUSTOMER_TYPE"></property>
+		<property name="custIsBlack" column="CUST_IS_BLACK"></property>
+		<property name="optBlackDate" column="OPT_BLACK_DATE"></property>
+		<property name="createDate" column="CREATE_DATE"></property>
+		<property name="createOr" column="CREATE_OR"></property>		
+		
+	</class>
+
+</hibernate-mapping>

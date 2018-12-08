@@ -21,7 +21,33 @@
 	
 	<bean id="loanInfoDao" class="njupt.microcredit.dao.impl.LoanInfoDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean>   
+	</bean> 
+	
+	<bean id="businessInfoDao" class="njupt.microcredit.dao.impl.BusinessInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="companyInfoDao" class="njupt.microcredit.dao.impl.CompanyInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="custBasicInfoDao" class="njupt.microcredit.dao.impl.CustBasicInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="customerInfoDao" class="njupt.microcredit.dao.impl.CustomerInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="legalPersonInfoDao" class="njupt.microcredit.dao.impl.LegalPersonInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="loanApplyInfoDao" class="njupt.microcredit.dao.impl.LoanApplyInfoDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
 	
 </beans>     
 

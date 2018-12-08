@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="LegalPersonInfo" table="legal_person_info">
+	    <id name="id" column="ID">
+	    	<generator class="native"></generator>
+	    </id>
+		<property name="custId" column="CUST_ID"></property>
+		<property name="custType" column="CUST_TYPE"></property>
+		<property name="identifyType" column="IDENTIFY_TYPE"></property>
+		<property name="identifyNum" column="IDENTIFY_NUM"></property>
+		<property name="phoneNum" column="PHONE_NUM"></property>
+		<property name="createDate" column="CREATE_DATE"></property>	
+		<property name="createUser" column="CREATE_USER"></property>	
+		
+	</class>
+
+</hibernate-mapping>

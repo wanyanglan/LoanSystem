@@ -19,10 +19,26 @@
 	<bean id="loanInfoAction" class="njupt.microcredit.action.LoanInfoAction" scope="prototype">
 		<property name="loanInfoService" ref="loanInfoService"></property>
 		<property name="clientInfoService" ref="clientInfoService"></property>
+		
 	</bean>
 	<bean id="loanClientfoAction" class="njupt.microcredit.action.LoanClientAction" scope="prototype">
 		<property name="loanInfoService" ref="loanInfoService"></property>
 		<property name="clientInfoService" ref="clientInfoService"></property>
+		
+	</bean>
+	
+	<bean id="loanCompanyAction" class="njupt.microcredit.action.LoanCompanyAction" scope="prototype">
+		<property name="legalPersonInfoService" ref="legalPersonInfoService"></property>
+		<property name="loanApplyInfoService" ref="loanApplyInfoService"></property>
+		<property name="companyInfoService" ref="companyInfoService"></property>
+		<property name="businessInfoService" ref="businessInfoService"></property>
+		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
+	</bean>
+	
+	<bean id="loanAndClientAction" class="njupt.microcredit.action.LoanAndClientAction" scope="prototype">
+		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
+		<property name="customerInfoService" ref="customerInfoService"></property>
+		<property name="loanApplyInfoService" ref="loanApplyInfoService"></property>
 	</bean>
 	
 </beans>     

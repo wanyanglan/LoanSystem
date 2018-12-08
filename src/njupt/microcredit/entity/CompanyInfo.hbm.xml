@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="CompanyInfo" table="company_info">
+	    <id name="id" column="ID">
+	    	<generator class="native"></generator>
+	    </id>
+		<property name="custId" column="CUST_ID"></property>
+		<property name="custName" column="CUST_NAME"></property>
+		<property name="custAlias" column="CUST_ALIAS"></property>
+		<property name="conpamyProperty" column="CONPAMY_PROPERTY"></property>
+		<property name="ownerProperty" column="OWNER_PROPERTY"></property>	
+		<property name="economicType" column="ECONOMIC_TYPE"></property>
+		<property name="creditGrage" column="CREDIT_GRAGE"></property>
+		<property name="companyScale" column="COMPANY_SCALE"></property>
+		<property name="industry" column="INDUSTRY"></property>
+		<property name="conpamyAddr" column="CONPAMY_ADDR"></property>
+		<property name="companyPhone" column="COMPANY_PHONE"></property>
+		<property name="companyFax" column="COMPANY_FAX"></property>
+		<property name="companyEmail" column="COMPANY_EMAIL"></property>
+		<property name="companyPostcode" column="COMPANY_POSTCODE"></property>
+		<property name="businessAddr" column="BUSINESS_ADDR"></property>
+		<property name="createDate" column="CREATE_DATE"></property>
+		<property name="createUser" column="CREATE_USER"></property>	
+	</class>
+
+</hibernate-mapping>
