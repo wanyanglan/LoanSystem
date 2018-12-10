@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -102,11 +103,11 @@
 						<ul class="navContent" style="display:block">
 							<li class="active">
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私管理</div>
-								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
+								<a href="list_privateCustomer"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公管理</div>
-								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
+								<a href="list_publicCustomer"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
 							</li>
 
 						</ul>
@@ -149,19 +150,20 @@
 							<div class="clearfix"></div>
 							<div class="table-margin">
 								<div class="col-lg-12" style="margin-bottom: 20px;border: solid 1px #D6D6D6;">
-									<form action="#" method="post">
+									<!-- <form action="/list_searchResult" method="post"> -->
+									<s:form action="/list_searchResult" method="get">
 										<div class="row" style="margin-top: 5px;">
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
 												<div class="col-md-3" style="padding-left: 0px;">
-													<input type="text" name="use" class="form-control" placeholder="姓名、电话或证件号码" />
+													<input type="text" name="firstCondition" class="form-control" placeholder="姓名、电话或证件号码" />
 												</div>
 											</div>
 	
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">手机号码:</label>
 												<div class="col-md-3" style="padding-left: 0px;">
-													<input type="text" name="use" class="form-control"  />
+													<input type="text" name="phoneNum" class="form-control"  />
 												</div>
 											</div>
 											
@@ -173,10 +175,11 @@
 												<button class="btn btn-danger col-md-1" type="reset" >重置</button>
 											</div>
 										</div>
-									</form>
+									</s:form>
+									<!-- </form> -->
 								</div>
 							
-								<table class="table table-bordered table-header" style="text-align: center;font-size: 17px;">
+								<table class="table table-bordered table-header" style="text-align: center;font-size: 15px;">
 									<thead>
 										<tr>
 											<td class="w20">客户信息</td>
@@ -188,19 +191,27 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>小红</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>2</td>
-											<td>
-												<a href="persondetail.html" style="color: blue;">详情</a>&nbsp;&nbsp;
-												<a href="persondetail.html" style="color: blue;">编辑</a>&nbsp;&nbsp;
-												<a href="persondetail.html" style="color: blue;">删除</a>
-											</td>											
-											
-										</tr>
+										<s:if test="#request.privateList  != null ">
+											<s:iterator var="privateInfo" value="#request.privateList" status="st">
+												<tr>
+													<td>
+													<s:property value="#privateInfo[1]" />&nbsp;&nbsp;&nbsp;
+													<s:property value="#privateInfo[2]"/>&nbsp;&nbsp;&nbsp;
+													<s:property value="#privateInfo[3]" />岁
+													</td>
+													<td><s:property value="#privateInfo[4]" /></td>
+													<td><s:property value="#privateInfo[5]" /></td>
+													<td><s:property value="#privateInfo[6]" /></td>
+													<td><s:property value="#privateInfo[8]" /></td>
+													<td>
+														<a href="#" style="color: blue;">详情</a>&nbsp;&nbsp;
+														<a href="#" style="color: blue;">编辑</a>&nbsp;&nbsp;
+														<a href="#" style="color: blue;">删除</a>
+													</td>											
+													
+												</tr>
+											</s:iterator>
+										</s:if>
 										<tfoot>
 				                          	<tr>
 					                            <td colspan="6">

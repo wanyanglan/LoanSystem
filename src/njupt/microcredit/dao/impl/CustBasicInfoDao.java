@@ -1,5 +1,7 @@
 package njupt.microcredit.dao.impl;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 
 import njupt.microcredit.dao.ICustBasicInfoDao;

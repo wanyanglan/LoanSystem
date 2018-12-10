@@ -21,5 +21,13 @@ public interface ILoanApplyInfoService {
     
   //查询个人的的贷款信息
     public List<Object[]> getPersonList();
+    
+    //根据个人的贷款条件查询
+    public List<Object[]> selectPersonCondition(String privateclient,String clientinfo,String loantype,
+    		String applytime1,String applytime2);
+    
+  //根据企业的贷款条件查询
+    public List<Object[]> selectCompanyCondition(String privateclient,String clientinfo,String loantype,
+    		String applytime1,String applytime2);
 
 }

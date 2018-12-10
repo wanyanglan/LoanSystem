@@ -31,6 +31,7 @@
 			<result name="editClient">/microcredit/persondetail.jsp</result>
 			<result name="listAction" type="redirectAction">client_loanPersonList</result>
 			<result name="add">/microcredit/loanlist.jsp</result>
+			<result name="loanSearchList">/microcredit/displayInfo.jsp</result>
 		</action>
 		
 		<!-- 企业信息贷款 -->
@@ -39,7 +40,16 @@
 			<result name="listcompany">/microcredit/bussnessdisplayInfo.jsp</result>
 			<result name="insert">/microcredit/bussnessloan.jsp</result>
 			<result name="listAction" type="redirectAction">company_comList</result>
-			<result name="editCompany">/microcredit/businessdetail.jsp</result>
+			<result name="editCompany">/microcredit/businessdetail.jsp</result>			
+		</action>
+		
+		<!-- 客户信息管理模块 -->
+		<action name="list_*" class="customerManageAction" method="{1}">
+			<result name="privateList">/microcredit/accountInfo.jsp</result>		
+			<result name="searchList">/microcredit/accountInfo.jsp</result>
+			
+			<result name="publicList">/microcredit/blacklist.jsp</result>
+			<result name="publicResult">/microcredit/blacklist.jsp</result> 
 		</action>
 		
 		

@@ -41,5 +41,15 @@ public class CustomerInfoService implements ICustomerInfoService {
 		customerInfoDao.updateByPrimaryKey(customerInfo);
 
 	}
+	@Override
+	public List<Object[]> selectByOtherInfo() {
+		
+		return customerInfoDao.selectByOtherInfo();
+	}
+	@Override
+	public List<Object[]> selectFuzzyQuery(String firstCondition, String phoneNum) {
+		
+		return customerInfoDao.selectFuzzyQuery(firstCondition, phoneNum);
+	}
 
 }

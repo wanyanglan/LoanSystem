@@ -15,5 +15,16 @@ public interface ICustomerInfoService {
     public List<CustomerInfo> getAll();
 
     public void updateByPrimaryKey(CustomerInfo customerInfo);
+    
+    /**
+     * 对私客户查看客户的操作者
+     * @return
+     */
+    public List<Object[]> selectByOtherInfo();
+    
+    /**
+     * 对私客户信息模糊查询
+     */
+    public List<Object[]> selectFuzzyQuery(String firstCondition,String phoneNum);
 
 }

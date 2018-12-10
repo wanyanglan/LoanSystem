@@ -49,6 +49,19 @@ public class LoanApplyInfoService implements ILoanApplyInfoService {
 		
 		return loanApplyInfoDao.getPersonList();
 	}
+	@Override
+	public List<Object[]> selectPersonCondition(String privateclient, String clientinfo, String loantype,
+			String applytime1, String applytime2) {
+		
+		return loanApplyInfoDao.selectPersonCondition(privateclient, clientinfo, loantype, applytime1, applytime2);
+	}
+	
+	@Override
+	public List<Object[]> selectCompanyCondition(String privateclient, String clientinfo, String loantype,
+			String applytime1, String applytime2) {
+		
+		return loanApplyInfoDao.selectCompanyCondition(privateclient, clientinfo, loantype, applytime1, applytime2);
+	}
 	
 
 	

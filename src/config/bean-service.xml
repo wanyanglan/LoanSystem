@@ -15,13 +15,7 @@
      	 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Service需要注入Dao -->
-	<bean id="clientInfoService" class="njupt.microcredit.service.impl.ClientInfoService">
-		<property name="clientInfoDao" ref="clientInfoDao"></property>
-	</bean>
 	
-	<bean id="loanInfoService" class="njupt.microcredit.service.impl.LoanInfoService">
-		<property name="loanInfoDao" ref="loanInfoDao"></property>
-	</bean>	
 
 	<bean id="custBasicInfoService" class="njupt.microcredit.service.impl.CustBasicInfoService">
 		<property name="custBasicInfoDao" ref="custBasicInfoDao"></property>

@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.RequestAware;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -236,6 +239,25 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 		loanApplyInfo.setIdentifyNum(legalPersonInfo.getIdentifyNum());
 		loanApplyInfoService.updateByPrimaryKey(loanApplyInfo);
 		return "listAction";
+	}
+	
+	/**
+	 * 根据企业的条件进行查询信息
+	 */
+	public String loanSearchInfo() {
+		//获取jsp页面传输的内容
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String privateclient = req.getParameter("privateclient").trim();
+		String companyinfo = req.getParameter("clientinfo").trim();
+		String loantype = req.getParameter("loantype").trim();
+		String applytime1 = req.getParameter("applytime1").trim();
+		String applytime2 = req.getParameter("applytime2").trim();
+		
+//		System.out.println(privateclient + "\t" +companyinfo + "\t"+loantype+ "\t"+applytime1);
+		
+		List<Object[]> companyLoan = loanApplyInfoService.selectPersonCondition(privateclient, companyinfo, loantype, applytime1, applytime2);
+		request.put("companyLoan",companyLoan);
+		return "loanSearchList";
 	}
 	
 	

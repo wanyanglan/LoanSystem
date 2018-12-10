@@ -16,16 +16,6 @@
      	 
      <!-- Action中需要注入Service -->
 	<!-- 贷款信息管理模块 -->
-	<bean id="loanInfoAction" class="njupt.microcredit.action.LoanInfoAction" scope="prototype">
-		<property name="loanInfoService" ref="loanInfoService"></property>
-		<property name="clientInfoService" ref="clientInfoService"></property>
-		
-	</bean>
-	<bean id="loanClientfoAction" class="njupt.microcredit.action.LoanClientAction" scope="prototype">
-		<property name="loanInfoService" ref="loanInfoService"></property>
-		<property name="clientInfoService" ref="clientInfoService"></property>
-		
-	</bean>
 	
 	<bean id="loanCompanyAction" class="njupt.microcredit.action.LoanCompanyAction" scope="prototype">
 		<property name="legalPersonInfoService" ref="legalPersonInfoService"></property>
@@ -39,6 +29,15 @@
 		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
 		<property name="customerInfoService" ref="customerInfoService"></property>
 		<property name="loanApplyInfoService" ref="loanApplyInfoService"></property>
+	</bean>
+	
+	<!-- 客户信息管理模块 -->
+	<bean id="customerManageAction" class="njupt.microcredit.action.CustomerManageAction" scope="prototype">
+		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
+		<property name="customerInfoService" ref="customerInfoService"></property>
+		<property name="companyInfoService" ref="companyInfoService"></property>
+		<property name="businessInfoService" ref="businessInfoService"></property>
+		<property name="legalPersonInfoService" ref="legalPersonInfoService"></property>
 	</bean>
 	
 </beans>     

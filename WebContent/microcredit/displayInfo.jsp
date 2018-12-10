@@ -105,11 +105,11 @@
 						<ul class="navContent" style="display:none">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私管理</div>
-								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
+								<a href="list_privateCustomer"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私管理</span></a>
 							</li>
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公管理</div>
-								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
+								<a href="list_publicCustomer"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公管理</span></a>
 							</li>
 						</ul>
 					</div>
@@ -147,6 +147,48 @@
 							<div class="manage-detail-con clearfix">
 								<a class="custom" href="client_viewAdd">新建申请</a>
 							</div>
+						</div>
+						<div class="col-lg-12" style="margin-bottom: 20px;border: solid 1px #D6D6D6;">
+							<s:form action="/client_loanSearchInfo" method="get">
+								<div class="row" style="margin-top: 5px;">
+									<div class="form-group">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户类型:</label>
+										<div class="col-md-2" style="padding-left: 0px;">
+											<select id="inputSex" name="privateclient" class="form-control" >
+											<option value="1">对私客户</option>
+										</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
+										<div class="col-md-2" style="padding-left: 0px;">
+											<input type="text" name="clientinfo" class="form-control" placeholder="姓名、电话或证件号码" />
+										</div>
+									</div>	
+									<div class="form-group">
+										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
+										<div class="col-md-2" style="padding-left: 0px;">
+											<input type="text" name="loantype" class="form-control" />
+										</div>
+									</div>	
+								</div>
+								
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label class="col-md-2 conntrol-label" style="text-align: center;margin-top: 5px;margin-left: 5px;">创建时间:</label>
+										<div class="form-inline" >
+											<input type="text" name="applytime1" class="form-control"  size="22%"/>&nbsp;——&nbsp;
+											<input type="text" name="applytime2" class="form-control"  size="22%"/>					
+										</div>
+									</div>
+									<div class="form-group col-md-6" >												
+										<button class="btn btn-info col-md-2" type="submit" style="margin-right: 20px;margin-left: 48%;">搜索</button>	
+										<button class="btn btn-danger col-md-2" type="reset" >重置</button>											
+									</div>
+								</div>
+																		
+							</s:form>
 						</div>
 						<div class="manage-record">
 							<h6 class="margin-big-top"></h6>

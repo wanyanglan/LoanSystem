@@ -21,6 +21,16 @@ public interface ICompanyInfoDao {
     public List<CompanyInfo> selectByCustId(Integer custId);
 
     public void updateByPrimaryKey(CompanyInfo companyInfo);
+    
+    /**
+     * 查看对公客户的信息
+     */
+    public List<Object[]> selectOtherCompanyInfo();
+    
+    /**
+     * 对公客户信息模糊查询
+     */
+    public List<Object[]> selectFuzzyQuery(String companyName, String licenseNum, String legalPersonInfo);
 
     
 

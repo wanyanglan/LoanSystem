@@ -1,5 +1,7 @@
 package njupt.microcredit.dao;
 
+import java.util.List;
+
 import njupt.microcredit.entity.CustBasicInfo;
 
 public interface ICustBasicInfoDao {
@@ -11,5 +13,7 @@ public interface ICustBasicInfoDao {
      public CustBasicInfo selectByPrimaryKey(Integer custId);
 
      public void updateByPrimaryKey(CustBasicInfo custBasicInfo);
+     
+    
 
 }

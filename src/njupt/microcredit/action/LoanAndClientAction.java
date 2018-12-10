@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.RequestAware;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -169,6 +172,23 @@ public class LoanAndClientAction extends ActionSupport implements RequestAware{
 		loanApplyInfoService.updateByPrimaryKey(loanApplyInfo);
 
 		return "listAction";
+	}
+	
+	/**
+	 * 从个人贷款客户中找出指定查询条件的客户
+	 */
+	public String loanSearchInfo() {
+		//获取jsp页面传输的内容
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String privateclient = req.getParameter("privateclient").trim();
+		String clientinfo = req.getParameter("clientinfo").trim();
+		String loantype = req.getParameter("loantype").trim();
+		String applytime1 = req.getParameter("applytime1").trim();
+		String applytime2 = req.getParameter("applytime2").trim();
+		System.out.println(privateclient + "\t" +clientinfo + "\t"+loantype+ "\t"+applytime1);
+		List<Object[]> loanList = loanApplyInfoService.selectPersonCondition(privateclient, clientinfo, loantype, applytime1, applytime2);
+		request.put("loanList",loanList);
+		return "loanSearchList";
 	}
 	
 	//接收框架运行时候传入的request对象的map

@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -104,11 +105,11 @@
 						<ul class="navContent" style="display:block">
 							<li>
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对私客户</div>
-								<a href="accountInfo.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私客户</span></a>
+								<a href="list_privateCustomer"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私客户</span></a>
 							</li>
 							<li class="active">
 								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />对公客户</div>
-								<a href="blacklist.jsp"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公客户</span></a>
+								<a href="list_publicCustomer"><span class="sublist-icon glyphicon glyphicon-ban-circle"></span><span class="sub-title">对公客户</span></a>
 							</li>
 						</ul>
 					</div>
@@ -151,25 +152,25 @@
 							<div class="clearfix"></div>
 							<div class="table-margin">
 								<div class="col-lg-12" style="margin-bottom: 20px;border: solid 1px #D6D6D6;">
-									<form action="#" method="post">
+									<s:form action="/list_searchPublicResult" method="get">
 										<div class="row" style="margin-top: 5px;">
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="use" class="form-control" placeholder="企业名称" />
+													<input type="text" name="companyName" class="form-control" placeholder="企业名称" />
 												</div>
 											</div>
 	
 											<div class="form-group">
-												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">手机号码:</label>
+												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">营业执照:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="use" class="form-control" placeholder="营业执照" />
+													<input type="text" name="licenseNum" class="form-control" placeholder="营业执照" />
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">法人信息:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="use" class="form-control"  placeholder="法人姓名或证件号码"/>
+													<input type="text" name="legalPerson" class="form-control"  placeholder="法人姓名或证件号码"/>
 												</div>
 											</div>
 											
@@ -177,13 +178,13 @@
 										<!--最后提交部分-->
 										<div class="row" style="margin-bottom: 20px;margin-top: 20px;">
 											<div class="form-group">
-												<button class="btn btn-info col-md-1" type="submit" style="margin-left: 75%;margin-right: 20px;" id="editId">搜索</button>	
+												<button class="btn btn-info col-md-1" type="submit" style="margin-left: 75%;margin-right: 20px;" >搜索</button>	
 												<button class="btn btn-danger col-md-1" type="reset" >重置</button>
 											</div>
 										</div>
-									</form>
+									</s:form>
 								</div>
-								<table class="table table-bordered table-header" style="text-align: center;font-size: 17px;">
+								<table class="table table-bordered table-header" style="text-align: center;font-size: 15px;">
 									<thead>
 										<tr>
 											<td class="w15">客户名称</td>
@@ -196,20 +197,24 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>xx有限责任公司</td>
-											<td>0000***0000</td>
-											<td>赵xx</td>
-											<td>2134t238747921</td>
-											<td>0571-888888</td>
-											<td>aa</td>
-											<td>
-												<a href="persondetail.html" style="color: blue;">详情</a>&nbsp;&nbsp;
-												<a href="persondetail.html" style="color: blue;">编辑</a>&nbsp;&nbsp;
-												<a href="persondetail.html" style="color: blue;">删除</a>
-											</td>											
-											
-										</tr>
+										<s:if test="#request.publicList != null">
+											<s:iterator var="publicInfo" value="#request.publicList" status="st">
+												<tr>
+													<td><s:property value="#publicInfo[1]" /></td>
+													<td><s:property value="#publicInfo[3]" /></td>
+													<td><s:property value="#publicInfo[5]" /></td>
+													<td><s:property value="#publicInfo[6]" /></td>
+													<td><s:property value="#publicInfo[7]" /></td>
+													<td><s:property value="#publicInfo[9]" /></td>
+													<td>
+														<a href="#" style="color: blue;">详情</a>&nbsp;&nbsp;
+														<a href="#" style="color: blue;">编辑</a>&nbsp;&nbsp;
+														<a href="#" style="color: blue;">删除</a>
+													</td>											
+													
+												</tr>
+											</s:iterator>
+										</s:if>
 										<tfoot>
 				                          	<tr>
 					                            <td colspan="7">

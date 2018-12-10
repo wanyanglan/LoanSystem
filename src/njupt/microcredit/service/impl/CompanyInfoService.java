@@ -40,5 +40,15 @@ public class CompanyInfoService implements ICompanyInfoService {
 		
 		return companyInfoDao.selectByCustId(custId);
 	}
-
+	@Override
+	public List<Object[]> selectOtherCompanyInfo() {
+		
+		return companyInfoDao.selectOtherCompanyInfo();
+	}
+	@Override
+	public List<Object[]> selectFuzzyQuery(String companyName, String licenseNum, String legalPersonInfo) {
+		
+		return companyInfoDao.selectFuzzyQuery(companyName, licenseNum, legalPersonInfo);
+	}
+	
 }
