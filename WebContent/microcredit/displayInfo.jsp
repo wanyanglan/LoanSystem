@@ -163,13 +163,15 @@
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<input type="text" name="clientinfo" class="form-control" placeholder="姓名、电话或证件号码" />
+											
+											<s:textfield name="clientinfo" cssClass="form-control" placeholder="姓名、电话或证件号码"></s:textfield>
 										</div>
 									</div>	
 									<div class="form-group">
 										<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
 										<div class="col-md-2" style="padding-left: 0px;">
-											<input type="text" name="loantype" class="form-control" />
+		
+											<s:textfield name="loantype" cssClass="form-control" placeholder="贷款类型"></s:textfield>
 										</div>
 									</div>	
 								</div>
@@ -178,8 +180,10 @@
 									<div class="form-group col-md-6">
 										<label class="col-md-2 conntrol-label" style="text-align: center;margin-top: 5px;margin-left: 5px;">创建时间:</label>
 										<div class="form-inline" >
-											<input type="text" name="applytime1" class="form-control"  size="22%"/>&nbsp;——&nbsp;
-											<input type="text" name="applytime2" class="form-control"  size="22%"/>					
+											
+											<s:textfield name="applytime1" cssClass="form-control" size="22%" placeholder="起始日期"></s:textfield>&nbsp;——&nbsp;
+											
+											<s:textfield name="applytime2" cssClass="form-control" size="22%" placeholder="截止日期"></s:textfield>
 										</div>
 									</div>
 									<div class="form-group col-md-6" >												

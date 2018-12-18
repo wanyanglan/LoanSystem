@@ -69,20 +69,23 @@ public class CustomerInfoDao implements ICustomerInfoDao {
 	@Override
 	public List<Object[]> selectFuzzyQuery(String firstCondition, String phoneNum) {
 		List<Object[]> resultSet = null;
-		if(firstCondition == "" && phoneNum != "") {
+		/**
+		 * 方式一
+		 */
+		if("".equals(firstCondition) && !("".equals(phoneNum))) {
 			resultSet = sessionFactory.getCurrentSession()
 					 .createSQLQuery("SELECT a.ID,a.CUST_NAME,a.CUST_GENDER,a.CUST_AGE,a.IDENTIFY_TYPE,a.IDENTIFY_NUM,a.PHONE_NUM,b.CUST_ID,b.CREATE_OR\r\n" + 
 					 		"FROM customer_info a,cust_basic_info b WHERE a.CUST_ID = b.CUST_ID AND a.PHONE_NUM LIKE ?")
 					 .setParameter(0,  phoneNum+"%")
 					 .list();
-		}else if(firstCondition != "" && phoneNum == ""){
+		}else if(!("".equals(firstCondition)) && "".equals(phoneNum)){
 			resultSet = sessionFactory.getCurrentSession()
 					 .createSQLQuery("select a.ID,a.CUST_NAME,a.CUST_GENDER,a.CUST_AGE,a.IDENTIFY_TYPE,a.IDENTIFY_NUM,a.PHONE_NUM,b.CUST_ID,b.CREATE_OR\r\n" + 
 					 "from customer_info a,cust_basic_info b where a.CUST_ID = b.CUST_ID and (a.CUST_NAME like ? or a.IDENTIFY_NUM like ?)")
 					 .setParameter(0, "%"+firstCondition +"%")
 					 .setParameter(1,  firstCondition)
 					 .list();
-		}else if(firstCondition !="" && phoneNum != ""){
+		}else if(!("".equals(firstCondition)) && !("".equals(phoneNum))){
 			resultSet = sessionFactory.getCurrentSession()
 					 .createSQLQuery("select a.ID,a.CUST_NAME,a.CUST_GENDER,a.CUST_AGE,a.IDENTIFY_TYPE,a.IDENTIFY_NUM,a.PHONE_NUM,b.CUST_ID,b.CREATE_OR\r\n" + 
 					 "from customer_info a,cust_basic_info b where a.CUST_ID = b.CUST_ID and (a.CUST_NAME like ? or a.IDENTIFY_NUM like ?) and a.PHONE_NUM like ?")
@@ -93,12 +96,24 @@ public class CustomerInfoDao implements ICustomerInfoDao {
 		}else {
 			resultSet = sessionFactory.getCurrentSession()
 					 .createSQLQuery("select a.ID,a.CUST_NAME,a.CUST_GENDER,a.CUST_AGE,a.IDENTIFY_TYPE,a.IDENTIFY_NUM,a.PHONE_NUM,b.CUST_ID,b.CREATE_OR\r\n" + 
-					 "from customer_info a,cust_basic_info b where a.CUST_ID = b.CUST_ID and (a.CUST_NAME =? or a.IDENTIFY_NUM =?) and a.PHONE_NUM =?")
+					 "from customer_info a,cust_basic_info b where a.CUST_ID = b.CUST_ID and (a.CUST_NAME like ? or a.IDENTIFY_NUM =?) and a.PHONE_NUM =?")
 					 .setParameter(0, firstCondition)
 					 .setParameter(1, firstCondition)
 					 .setParameter(2, phoneNum)
 					 .list();
 		}
+		/**
+		 * 方式二
+		 */
+//		String sql = "select a.ID,a.CUST_NAME,a.CUST_GENDER,a.CUST_AGE,a.IDENTIFY_TYPE,a.IDENTIFY_NUM,a.PHONE_NUM,b.CUST_ID,b.CREATE_OR\r\n" + 
+//				 "from customer_info a,cust_basic_info b where a.CUST_ID = b.CUST_ID ";
+//		if(!("".equals(firstCondition))) {			
+//			sql = sql + "and (a.CUST_NAME like '"+"%"+firstCondition+"%"+"' or a.IDENTIFY_NUM ='"+firstCondition+"') ";
+//		}
+//		if (!("".equals(phoneNum.trim()))) {
+//			sql = sql + "and a.PHONE_NUM='"+phoneNum+"' ";
+//		}
+//		resultSet = sessionFactory.getCurrentSession().createSQLQuery(sql).list();
 		return resultSet;
 		
 	}

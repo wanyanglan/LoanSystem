@@ -40,7 +40,8 @@
 			<result name="listcompany">/microcredit/bussnessdisplayInfo.jsp</result>
 			<result name="insert">/microcredit/bussnessloan.jsp</result>
 			<result name="listAction" type="redirectAction">company_comList</result>
-			<result name="editCompany">/microcredit/businessdetail.jsp</result>			
+			<result name="editCompany">/microcredit/businessdetail.jsp</result>	
+			<result name="loanSearchList">/microcredit/bussnessdisplayInfo.jsp</result>		
 		</action>
 		
 		<!-- 客户信息管理模块 -->

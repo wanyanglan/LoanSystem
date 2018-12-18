@@ -155,24 +155,24 @@
 										<div class="row" style="margin-top: 5px;">
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
-												<div class="col-md-3" style="padding-left: 0px;">
-													<input type="text" name="firstCondition" class="form-control" placeholder="姓名、电话或证件号码" />
+												<div class="col-md-3" style="padding-left: 0px;">				
+													<s:textfield name="firstCondition" cssClass="form-control" placeholder="姓名或证件号码"></s:textfield>
 												</div>
 											</div>
 	
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">手机号码:</label>
-												<div class="col-md-3" style="padding-left: 0px;">
-													<input type="text" name="phoneNum" class="form-control"  />
+												<div class="col-md-3" style="padding-left: 0px;">										
+													<s:textfield name="phoneNum" cssClass="form-control" placeholder="手机号"></s:textfield>
 												</div>
 											</div>
 											
 										</div>
 										<!--最后提交部分-->
 										<div class="row" style="margin-bottom: 20px;margin-top: 20px;">
-											<div class="form-group">
-												<button class="btn btn-info col-md-1" type="submit" style="margin-left: 75%;margin-right: 20px;" id="editId">搜索</button>	
-												<button class="btn btn-danger col-md-1" type="reset" >重置</button>
+											<div class="form-group">											
+												<s:submit cssClass="btn btn-info col-md-1" cssStyle="margin-left: 75%;margin-right: 20px;" value="搜索"/> 												
+												<s:reset cssClass="btn btn-danger col-md-1" value="重置" />		
 											</div>
 										</div>
 									</s:form>
@@ -195,9 +195,9 @@
 											<s:iterator var="privateInfo" value="#request.privateList" status="st">
 												<tr>
 													<td>
-													<s:property value="#privateInfo[1]" />&nbsp;&nbsp;&nbsp;
-													<s:property value="#privateInfo[2]"/>&nbsp;&nbsp;&nbsp;
-													<s:property value="#privateInfo[3]" />岁
+														<s:property value="#privateInfo[1]" />&nbsp;&nbsp;&nbsp;
+														<s:property value="#privateInfo[2]"/>&nbsp;&nbsp;&nbsp;
+														<s:property value="#privateInfo[3]" />岁
 													</td>
 													<td><s:property value="#privateInfo[4]" /></td>
 													<td><s:property value="#privateInfo[5]" /></td>

@@ -35,7 +35,7 @@ public interface ILoanApplyInfoDao {
     		String applytime1,String applytime2);
     
     //根据企业的贷款条件查询
-    public List<Object[]> selectCompanyCondition(String privateclient,String companyinfo,String loantype,
+    public List<Object[]> selectCompanyCondition(String publicclient,String companyinfo,String loantype,
     		String applytime1,String applytime2);
 
 }

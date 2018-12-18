@@ -156,21 +156,21 @@
 										<div class="row" style="margin-top: 5px;">
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
-												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="companyName" class="form-control" placeholder="企业名称" />
+												<div class="col-md-2" style="padding-left: 0px;">												
+													<s:textfield name="companyName" cssClass="form-control" placeholder="企业名称"></s:textfield>
 												</div>
 											</div>
 	
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">营业执照:</label>
-												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="licenseNum" class="form-control" placeholder="营业执照" />
+												<div class="col-md-2" style="padding-left: 0px;">													
+													<s:textfield name="licenseNum" cssClass="form-control" placeholder="营业执照"></s:textfield>
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">法人信息:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="legalPerson" class="form-control"  placeholder="法人姓名或证件号码"/>
+													<s:textfield name="legalPerson" cssClass="form-control" placeholder="法人姓名或证件号码"></s:textfield>
 												</div>
 											</div>
 											
@@ -178,8 +178,8 @@
 										<!--最后提交部分-->
 										<div class="row" style="margin-bottom: 20px;margin-top: 20px;">
 											<div class="form-group">
-												<button class="btn btn-info col-md-1" type="submit" style="margin-left: 75%;margin-right: 20px;" >搜索</button>	
-												<button class="btn btn-danger col-md-1" type="reset" >重置</button>
+												<s:submit cssClass="btn btn-info col-md-1" cssStyle="margin-left: 75%;margin-right: 20px;" value="搜索"/> 												
+												<s:reset cssClass="btn btn-danger col-md-1" value="重置" />						
 											</div>
 										</div>
 									</s:form>

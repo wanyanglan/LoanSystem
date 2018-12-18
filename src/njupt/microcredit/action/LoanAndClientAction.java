@@ -68,8 +68,46 @@ public class LoanAndClientAction extends ActionSupport implements RequestAware{
 	public void setLoanApplyInfoService(ILoanApplyInfoService loanApplyInfoService) {
 		this.loanApplyInfoService = loanApplyInfoService;
 	}
+	/**
+	 * 个人贷款搜索条件
+	 */
+	private String privateclient;
+	private String clientinfo;
+	private String loantype;
+	private String applytime1;
+	private String applytime2;
 	
 	
+	public String getPrivateclient() {
+		return privateclient;
+	}
+	public void setPrivateclient(String privateclient) {
+		this.privateclient = privateclient;
+	}
+	public String getClientinfo() {
+		return clientinfo;
+	}
+	public void setClientinfo(String clientinfo) {
+		this.clientinfo = clientinfo;
+	}
+	public String getLoantype() {
+		return loantype;
+	}
+	public void setLoantype(String loantype) {
+		this.loantype = loantype;
+	}
+	public String getApplytime1() {
+		return applytime1;
+	}
+	public void setApplytime1(String applytime1) {
+		this.applytime1 = applytime1;
+	}
+	public String getApplytime2() {
+		return applytime2;
+	}
+	public void setApplytime2(String applytime2) {
+		this.applytime2 = applytime2;
+	}
 	/**
 	 * 1. 贷款信息展示
 	 * @return
@@ -179,13 +217,19 @@ public class LoanAndClientAction extends ActionSupport implements RequestAware{
 	 */
 	public String loanSearchInfo() {
 		//获取jsp页面传输的内容
-		HttpServletRequest req = ServletActionContext.getRequest();
-		String privateclient = req.getParameter("privateclient").trim();
-		String clientinfo = req.getParameter("clientinfo").trim();
-		String loantype = req.getParameter("loantype").trim();
-		String applytime1 = req.getParameter("applytime1").trim();
-		String applytime2 = req.getParameter("applytime2").trim();
-		System.out.println(privateclient + "\t" +clientinfo + "\t"+loantype+ "\t"+applytime1);
+//		HttpServletRequest req = ServletActionContext.getRequest();
+//		String privateclient = req.getParameter("privateclient").trim();
+//		String clientinfo = req.getParameter("clientinfo").trim();
+//		String loantype = req.getParameter("loantype").trim();
+//		String applytime1 = req.getParameter("applytime1").trim();
+//		String applytime2 = req.getParameter("applytime2").trim();
+//		System.out.println(privateclient + "\t" +clientinfo + "\t"+loantype+ "\t"+applytime1);
+		privateclient = privateclient.trim();
+		clientinfo = clientinfo.trim();
+		loantype = loantype.trim();
+		applytime1 = applytime1.trim();
+		applytime2 = applytime2.trim();
+		
 		List<Object[]> loanList = loanApplyInfoService.selectPersonCondition(privateclient, clientinfo, loantype, applytime1, applytime2);
 		request.put("loanList",loanList);
 		return "loanSearchList";

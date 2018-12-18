@@ -154,7 +154,7 @@
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户类型:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<select id="inputSex" name="sex" class="form-control" >
+													<select id="inputSex" name="publicclient" class="form-control" >
 													<option value="2">对公客户</option>
 												</select>
 												</div>
@@ -163,13 +163,16 @@
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">客户:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="companyinfo" class="form-control" placeholder="名称或营业执照" />
+													
+													<s:textfield name="companyinfo" cssClass="form-control" placeholder="名称或营业执照"></s:textfield>
 												</div>
 											</div>	
 											<div class="form-group">
 												<label class="col-md-1 conntrol-label" style="text-align: right;margin-top: 5px;">贷款类型:</label>
 												<div class="col-md-2" style="padding-left: 0px;">
-													<input type="text" name="loantype" class="form-control" />
+													
+													<s:textfield name="loantype" cssClass="form-control" placeholder="贷款类型"></s:textfield>
+													
 												</div>
 											</div>	
 										</div>
@@ -178,8 +181,9 @@
 											<div class="form-group col-md-6">
 												<label class="col-md-2 conntrol-label" style="text-align: center;margin-top: 5px;margin-left: 5px;">创建时间:</label>
 												<div class="form-inline" >
-													<input type="text" name="applytime1" class="form-control"  size="22%"/>&nbsp;——&nbsp;
-													<input type="text" name="applytime2" class="form-control"  size="22%"/>					
+													<s:textfield name="applytime1" cssClass="form-control" size="22%" placeholder="起始日期"></s:textfield>&nbsp;——&nbsp;
+											
+													<s:textfield name="applytime2" cssClass="form-control" size="22%" placeholder="截止日期"></s:textfield>				
 												</div>
 											</div>
 											<div class="form-group col-md-6" >												

@@ -114,8 +114,45 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 		this.businessInfoService = businessInfoService;
 	}
 	
-	
-	
+	/**
+	 * 设置企业搜索条件
+	 */
+	private String publicclient ;
+	private String companyinfo ;
+	private String loantype ;
+	private String applytime1 ;
+	private String applytime2 ;
+
+	public String getPublicclient() {
+		return publicclient;
+	}
+	public void setPublicclient(String publicclient) {
+		this.publicclient = publicclient;
+	}
+	public String getCompanyinfo() {
+		return companyinfo;
+	}
+	public void setCompanyinfo(String companyinfo) {
+		this.companyinfo = companyinfo;
+	}
+	public String getLoantype() {
+		return loantype;
+	}
+	public void setLoantype(String loantype) {
+		this.loantype = loantype;
+	}
+	public String getApplytime1() {
+		return applytime1;
+	}
+	public void setApplytime1(String applytime1) {
+		this.applytime1 = applytime1;
+	}
+	public String getApplytime2() {
+		return applytime2;
+	}
+	public void setApplytime2(String applytime2) {
+		this.applytime2 = applytime2;
+	}
 	/**
 	 * 1.贷款信息展示
 	 */
@@ -188,6 +225,10 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 		return "listAction";
 	}
 
+	/**
+	 * 查看企业贷款信息
+	 * @return
+	 */
 	public String viewCompanyLoanInfo() {
 		
 		//查看要要获取的贷款记录的id
@@ -225,7 +266,10 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 		
 		return "editCompany";
 	}
-	
+	/**
+	 * 修改贷款信息
+	 * @return
+	 */
 	public String updateCompanyInfo() {
 		System.out.println(businessInfo);
 		legalPersonInfoService.updateByPrimaryKey(legalPersonInfo);
@@ -246,16 +290,22 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 	 */
 	public String loanSearchInfo() {
 		//获取jsp页面传输的内容
-		HttpServletRequest req = ServletActionContext.getRequest();
-		String privateclient = req.getParameter("privateclient").trim();
-		String companyinfo = req.getParameter("clientinfo").trim();
-		String loantype = req.getParameter("loantype").trim();
-		String applytime1 = req.getParameter("applytime1").trim();
-		String applytime2 = req.getParameter("applytime2").trim();
+//		HttpServletRequest req = ServletActionContext.getRequest();
+//		String publicclient = req.getParameter("publicclient").trim();
+//		String companyinfo = req.getParameter("companyinfo").trim();
+//		String loantype = req.getParameter("loantype").trim();
+//		String applytime1 = req.getParameter("applytime1").trim();
+//		String applytime2 = req.getParameter("applytime2").trim();
+		publicclient = publicclient.trim();
+		companyinfo = companyinfo.trim();
+		loantype = loantype.trim();
+		applytime1 = applytime1.trim();
+		applytime2 = applytime2.trim();
 		
-//		System.out.println(privateclient + "\t" +companyinfo + "\t"+loantype+ "\t"+applytime1);
+//		System.out.println(publicclient+":"+companyinfo+":"+loantype+":"+applytime1+":"+applytime2);
 		
-		List<Object[]> companyLoan = loanApplyInfoService.selectPersonCondition(privateclient, companyinfo, loantype, applytime1, applytime2);
+		List<Object[]> companyLoan = loanApplyInfoService
+				.selectCompanyCondition(publicclient, companyinfo, loantype, applytime1, applytime2);
 		request.put("companyLoan",companyLoan);
 		return "loanSearchList";
 	}

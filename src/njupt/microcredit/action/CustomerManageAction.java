@@ -1,5 +1,6 @@
 package njupt.microcredit.action;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ import njupt.microcredit.service.ICustomerInfoService;
 import njupt.microcredit.service.ILegalPersonInfoService;
 
 public class CustomerManageAction extends ActionSupport implements RequestAware{
-
+	
 	/**
 	 * 封装操作的实体对象
 	 */
@@ -93,6 +94,50 @@ public class CustomerManageAction extends ActionSupport implements RequestAware{
 		this.businessInfoService = businessInfoService;
 	}
 	
+	/**
+	 * 确定对私客户的搜索条件
+	 */
+	String firstCondition;
+	public void setFirstCondition(String firstCondition) {
+		this.firstCondition = firstCondition;
+	}
+	public String getFirstCondition() {
+		return firstCondition;
+	}
+	
+	String phoneNum;
+	public String getPhoneNum() {
+		return phoneNum;
+	}
+	public void setPhoneNum(String phoneNum) {
+		this.phoneNum = phoneNum;
+	}
+	/**
+	 * 确定对公客户的搜索条件
+	 */
+	String companyName ;
+	String licenseNum ;
+	String legalPerson ;
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getLicenseNum() {
+		return licenseNum;
+	}
+	public void setLicenseNum(String licenseNum) {
+		this.licenseNum = licenseNum;
+	}
+	public String getLegalPerson() {
+		return legalPerson;
+	}
+	public void setLegalPerson(String legalPerson) {
+		this.legalPerson = legalPerson;
+	}
+
+	
 	
 	/************个人贷款信息操作者显示**************/
 	
@@ -112,18 +157,11 @@ public class CustomerManageAction extends ActionSupport implements RequestAware{
 	 */
 	public String searchResult() {
 		
-		
-		HttpServletRequest req = ServletActionContext.getRequest();
-		String firstCondition = req.getParameter("firstCondition");
-		String phoneNum = req.getParameter("phoneNum");
-		
-		//打印语句看是否搜得到
-		System.out.println(firstCondition+" "+phoneNum);
-		
 		//去除传入的参数前后的空格
 		firstCondition = firstCondition.trim();
 		phoneNum = phoneNum.trim();	
-		
+		//打印语句看是否搜得到
+		System.out.println(firstCondition+" "+phoneNum);
 		//执行查询
 		List<Object[]> privateList = customerInfoService.selectFuzzyQuery(firstCondition, phoneNum);
 		
@@ -146,11 +184,10 @@ public class CustomerManageAction extends ActionSupport implements RequestAware{
 	 * @return
 	 */
 	public String searchPublicResult() {
-		//获取jsp页面传输的内容
-		HttpServletRequest req = ServletActionContext.getRequest();
-		String companyName = req.getParameter("companyName").trim();
-		String licenseNum = req.getParameter("licenseNum").trim();
-		String legalPerson = req.getParameter("legalPerson").trim();
+		
+		companyName = companyName.trim();
+		licenseNum = licenseNum.trim();
+		legalPerson = legalPerson.trim();
 		
 		List<Object[]> publicList = companyInfoService.selectFuzzyQuery(companyName, licenseNum, legalPerson);
 		request.put("publicList", publicList);
