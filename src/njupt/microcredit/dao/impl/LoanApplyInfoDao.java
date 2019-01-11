@@ -1,11 +1,7 @@
 package njupt.microcredit.dao.impl;
 
-import java.util.HashMap;
 import java.util.List;
-
-import org.apache.el.lang.ELArithmetic;
 import org.hibernate.SessionFactory;
-
 import njupt.microcredit.dao.ILoanApplyInfoDao;
 import njupt.microcredit.entity.LoanApplyInfo;
 

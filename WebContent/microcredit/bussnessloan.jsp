@@ -126,9 +126,42 @@
 								<a href="company_comList"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">企业申请列表</span></a>
 							</li>
 							
+							<li >
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcredit/img/leftimg.png" />贷款调查</div>
+								<a href="survey_basicinfo_test.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">贷款调查</span></a>
+							</li>	
 							
 						</ul>
 					</div>
+					
+					<!--描述：第三大模块-->
+					<div class="sBox">
+						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">数据管理</span>
+						</div>
+						<ul class="navContent" style="display:none">
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />多源数据融合</div>
+								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">多源数据融合</span></a>
+							</li>
+						</ul>
+					</div>
+					<!--描述：第四大模块-->
+                    <div class="sBox">
+						<div class="subNav sublist-down"><span class="title-icon glyphicon glyphicon-chevron-down"></span><span class="sublist-title">模型管理</span>
+						</div>
+						<ul class="navContent" style="display:none">
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />对私信用</div>
+								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对私信用</span></a>
+							</li>
+							
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />对公信用</div>
+								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">对公信用</span></a>
+							</li>
+						</ul>
+					</div>
+					
 				</div>
 			</div>
 			<!--
