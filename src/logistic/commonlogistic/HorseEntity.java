@@ -1,4 +1,4 @@
-package logistic;
+package logistic.commonlogistic;
 
 import java.util.List;
 

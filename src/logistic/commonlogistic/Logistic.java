@@ -1,4 +1,4 @@
-package logistic;
+package logistic.commonlogistic;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -156,6 +156,7 @@ public class Logistic {
 	 */
 	public double classifyVector(List<Double> attributes, List<Double> trainWeight) {
 		double prob = sigmod(vecMultipVec(attributes, trainWeight));
+		//System.out.println(prob);
 		if(prob > 0.5) {
 			return 1.0;
 		}else {
@@ -164,14 +165,15 @@ public class Logistic {
 	}
 	
 	public double testdata() {	
-		List<HorseEntity> trainDataSet = initDataSet("E:\\JavaWorkSpace\\microcredit\\src\\logistic\\horseColicTraining.txt");
-		List<HorseEntity> testDataSet = initDataSet("E:\\JavaWorkSpace\\microcredit\\src\\logistic\\horseColicTest.txt");
+		List<HorseEntity> trainDataSet = initDataSet("src/dataSet/horse/horseColicTraining.txt");
+		List<HorseEntity> testDataSet = initDataSet("src/dataSet/horse/horseColicTest.txt");
 		
 		List<Double> trainWeights = stocGradAscent(trainDataSet, 500);      //修改迭代次数调整模型的准确率
-		
+		System.out.println(trainWeights);
 		int errorCount = 0;
 		
 		for (HorseEntity horseEntity : testDataSet) {
+            //System.out.println("当前例子标签：" + (int)(Double.parseDouble(horseEntity.getLabel())) + " 预测的标签值" + (int)classifyVector(horseEntity.getAttributes(), trainWeights));
 			if ((int)classifyVector(horseEntity.getAttributes(), trainWeights) 
 					!= (int)(Double.parseDouble(horseEntity.getLabel()))) {
 				++ errorCount;

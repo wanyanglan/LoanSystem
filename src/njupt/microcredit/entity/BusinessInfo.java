@@ -97,6 +97,7 @@ public class BusinessInfo implements Serializable {
     /**
      * business_info
      */
+    //标识序列化类的id
     private static final long serialVersionUID = 1L;
 
     /**
