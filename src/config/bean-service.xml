@@ -33,6 +33,10 @@
 		<property name="companyInfoDao" ref="companyInfoDao"></property>
 	</bean>	
 	
+	<bean id="spider" class="njupt.microcredit.service.impl.Spider">
+		<property name="companyDao" ref="companyDao"></property>
+	</bean>	
+	
 	<bean id="legalPersonInfoService" class="njupt.microcredit.service.impl.LegalPersonInfoService">
 		<property name="legalPersonInfoDao" ref="legalPersonInfoDao"></property>
 	</bean>	

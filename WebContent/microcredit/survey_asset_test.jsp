@@ -137,8 +137,12 @@
 						</div>
 						<ul class="navContent" style="display:none">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />多源数据融合</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">多源数据融合</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />微博信息查询</div>
+								<a href="weibospider.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">微博信息查询</span></a>
+							</li>
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />公司信息查询</div>
+								<a href="info_viewSearch"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">公司信息查询</span></a>
 							</li>
 						</ul>
 					</div>

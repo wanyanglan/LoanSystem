@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="njupt.microcredit.entity">
+	<class name="Company" table="company">
+	    <id name="id" column="id">
+	    </id>
+		<property name="name" column="`name`"></property>
+		<property name="link" column="link"></property>	
+		<property name="address" column="address"></property>
+		<property name="desc" column="`desc`"></property>
+		<property name="capital" column="capital"></property>
+		<property name="state" column="state"></property>
+		<property name="registerNum" column="registerNum"></property>
+		<property name="code" column="`code`"></property>
+		<property name="mechanism" column="mechanism"></property>
+		<property name="taxpayer" column="taxpayer"></property>
+		<property name="type" column="type"></property>
+		<property name="term" column="term"></property>
+		<property name="industry" column="industry"></property>
+		<property name="qualifications" column="qualifications"></property>	
+		<property name="date" column="date"></property>
+		<property name="paid" column="paid"></property>	
+		<property name="scale" column="scale"></property>
+		<property name="number" column="number"></property>	
+		<property name="authority" column="authority"></property>	
+	</class>
+
+</hibernate-mapping>

@@ -35,13 +35,18 @@
 		</action>
 		
 		<!-- 企业信息贷款 -->
-		
 		<action name="company_*" class="loanCompanyAction" method="{1}">
 			<result name="listcompany">/microcredit/bussnessdisplayInfo.jsp</result>
 			<result name="insert">/microcredit/bussnessloan.jsp</result>
 			<result name="listAction" type="redirectAction">company_comList</result>
 			<result name="editCompany">/microcredit/businessdetail.jsp</result>	
 			<result name="loanSearchList">/microcredit/bussnessdisplayInfo.jsp</result>		
+		</action>
+		
+		<!-- 企业信息查询 -->
+		<action name="info_*" class="companyAction" method="{1}">
+			<result name="viewSearch">/microcredit/company_search.jsp</result>
+			<result name="companyDesc">/microcredit/company_desc.jsp</result>
 		</action>
 		
 		<!-- 客户信息管理模块 -->

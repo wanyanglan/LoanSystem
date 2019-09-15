@@ -24,6 +24,10 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="companyDao" class="njupt.microcredit.dao.impl.CompanyDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 	<bean id="custBasicInfoDao" class="njupt.microcredit.dao.impl.CustBasicInfoDao">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>

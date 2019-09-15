@@ -25,6 +25,11 @@
 		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
 	</bean>
 	
+	<!-- 公司信息管理模块 -->
+	<bean id="companyAction" class="njupt.microcredit.action.CompanyAction" scope="prototype">
+		<property name="spider" ref="spider"></property>
+	</bean>
+	
 	<bean id="loanAndClientAction" class="njupt.microcredit.action.LoanAndClientAction" scope="prototype">
 		<property name="custBasicInfoService" ref="custBasicInfoService"></property>
 		<property name="customerInfoService" ref="customerInfoService"></property>

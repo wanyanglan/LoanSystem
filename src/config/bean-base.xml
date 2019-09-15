@@ -19,8 +19,8 @@
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/microcredit"></property>
 		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="user" value="microcredit"></property>
-		<property name="password" value="123456"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="root"></property>
 		<property name="initialPoolSize" value="3"></property>
 		<property name="maxPoolSize" value="6"></property>
 	</bean>
@@ -32,8 +32,9 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- <prop key="hibernate.show_sql">true</prop> -->
+				<!-- <prop key="hibernate.format_sql">true</prop> -->
 			</props>
 		</property>
 		<property name="mappingLocations">	

@@ -142,8 +142,12 @@
 						</div>
 						<ul class="navContent" style="display:none">
 							<li>
-								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />多源数据融合</div>
-								<a href="#"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">多源数据融合</span></a>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />微博信息查询</div>
+								<a href="weibospider.jsp"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">微博信息查询</span></a>
+							</li>
+							<li>
+								<div class="showtitle" style="width:100px;"><img src="${pageContext.request.contextPath}/microcreditimg/leftimg.png" />公司信息查询</div>
+								<a href="info_viewSearch"><span class="sublist-icon glyphicon glyphicon-user"></span><span class="sub-title">公司信息查询</span></a>
 							</li>
 						</ul>
 					</div>
@@ -223,10 +227,10 @@
 				</div>
 			</div>
 		</div>
-		<script src="script/jquery-1.11.1.min.js" type="text/javascript"></script>
-		<script src="script/jquery.cookie.js" type="text/javascript"></script>
-		<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="script/function.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/microcredit/script/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/microcredit/script/jquery.cookie.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/microcredit/bootstrap-3.3.5-dist/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/microcredit/script/function.js" type="text/javascript"></script>
 		
 	</body>
 

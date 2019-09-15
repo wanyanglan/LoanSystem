@@ -307,8 +307,6 @@ public class LoanCompanyAction extends ActionSupport implements RequestAware{
 	}
 	
 	
-	
-	
 	//接收框架运行时候传入的request对象的map
 	private Map<String,Object> request;
 	@Override
